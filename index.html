@@ -20,6 +20,7 @@
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">選單</button>
       <nav class="main-nav" id="main-nav" aria-label="主要導覽">
+        <a href="#today">今天</a>
         <a href="#itinerary">每日行程</a>
         <a href="#stay">住宿</a>
         <a href="#essentials">實用資訊</a>
@@ -58,6 +59,28 @@
       <div class="overview-item"><span class="overview-icon">♡</span><div><small>旅行關鍵字</small><strong>泡湯・和牛・抹茶</strong></div></div>
     </section>
 
+    <section class="section-shell today-section" id="today" aria-live="polite">
+      <div class="today-panel">
+        <div class="today-copy">
+          <p class="eyebrow" id="today-kicker">TODAY AT A GLANCE</p>
+          <h2 id="today-title">今天，先看這裡。</h2>
+          <p id="today-intro">正在整理今天的行程。</p>
+          <span class="today-status" id="today-status"></span>
+        </div>
+        <div class="today-actions" aria-label="今日快速入口">
+          <a class="button button-primary button-small" id="today-map-link" href="#" target="_blank" rel="noreferrer">開啟今日地圖 ↗</a>
+          <a class="button button-ghost button-small" id="today-food-link" href="#day-detail">查看今日餐廳</a>
+          <button class="button button-quiet button-small" id="today-reset" type="button" hidden>回到今天</button>
+        </div>
+      </div>
+      <div class="today-facts">
+        <div class="today-fact"><span>今日日期</span><strong id="today-date"></strong></div>
+        <div class="today-fact"><span>今日路線</span><strong id="today-route"></strong></div>
+        <div class="today-fact"><span>下一站</span><strong id="today-next-stop"></strong></div>
+        <div class="today-fact"><span>今日提醒</span><strong id="today-note"></strong></div>
+      </div>
+    </section>
+
     <section class="section-shell stay-section" id="stay">
       <div class="section-heading compact-heading">
         <div>
@@ -68,10 +91,10 @@
       </div>
       <div class="stay-cards">
         <article class="stay-card">
-          <div class="stay-card-top"><span class="stay-city">KYOTO / DAY 1–4</span><span class="stay-mark">京</span></div>
+          <div class="stay-card-top"><span class="stay-city">KYOTO / DAY 1–5</span><span class="stay-mark">京</span></div>
           <h3>絆（京都）</h3>
           <p class="stay-address">65-2 Masuyachō, 下京區,<br />600-8195 京都市, 京都府, 日本</p>
-          <p class="stay-note">Day 1 晚上抵達後，建議從京都站搭計程車前往；Day 5 退房後前往天橋立。</p>
+          <p class="stay-note">Day 1 晚上抵達後，建議從京都站搭計程車前往；Day 5 晚上從天橋立返回京都，Day 6 早上退房後前往大阪。</p>
           <a class="text-link" href="https://www.google.com/maps/search/?api=1&query=65-2%20Masuyach%C5%8D%20Shimogyo-ku%20Kyoto" target="_blank" rel="noreferrer">在 Google Maps 開啟 ↗</a>
         </article>
         <article class="stay-card stay-card-osaka">
@@ -102,42 +125,26 @@
           <p class="eyebrow eyebrow-light">TRAVEL NOTE</p>
           <h2>早起一點，京都會把最安靜的風景留給你。</h2>
         </div>
-        <p>Day 5 會把天橋立的兩個展望台都收進行程：先看 View Land，再搭觀光船前往傘松公園。這是一個漂亮、但需要準時搭車的自助版本。</p>
+        <p>Day 5 會把天橋立的兩個展望台都排進行程：先前往距離車站較近的 View Land，再搭觀光船到一之宮，步行前往傘松公園。兩座展望台一天內都能安排，但必須配合列車與船班，不宜把完整穿越沙洲安排成主要交通方式。</p>
       </div>
     </section>
 
     <section class="section-shell information-grid" id="essentials">
       <div class="section-heading compact-heading">
-        <div><p class="eyebrow">ESSENTIALS</p><h2>出發前，先把這些放進口袋。</h2></div>
+        <div><p class="eyebrow">ESSENTIALS</p><h2>出發前與旅途中，先把這些放進口袋。</h2></div>
+        <p class="section-intro">旅行中每天打開這裡，先看今天最相關的地圖、交通、餐廳與官方資訊。</p>
       </div>
-      <div class="info-cards">
-        <article class="info-card info-card-accent">
-          <span class="card-kicker">TRANSPORT</span>
-          <h3>交通小抄</h3>
-          <ul>
-            <li>關西機場 → 京都：JR HARUKA 約 80 分鐘</li>
-            <li>清水寺：推薦計程車；HARUKA 不屬於京都市區交通</li>
-            <li>Day 5：View Land → 觀光船 → 傘松公園</li>
-            <li>回程航班：新今宮搭南海電鐵直達 KIX</li>
-          </ul>
-        </article>
+      <div class="toolbox-grid" id="toolbox-grid" aria-live="polite"></div>
+      <div class="info-cards food-only">
         <article class="info-card" id="food">
           <span class="card-kicker">MUST EAT</span>
           <h3>想吃清單</h3>
-          <div class="tag-list">
-            <span>宇治抹茶</span><span>湯豆腐</span><span>和牛</span><span>大阪燒</span><span>拉麵</span><span>炸豬排</span><span>壽司</span><span>串炸</span>
-          </div>
-          <p class="card-note">用 Tabelog 找在地美食；熱門店家與 Pokémon Café 記得先預約。</p>
-        </article>
-        <article class="info-card">
-          <span class="card-kicker">USJ NOTE</span>
-          <h3>環球影城攻略</h3>
-          <ul>
-            <li>開園前 1.5–2 小時抵達，先衝超級瑪利歐世界</li>
-            <li>善用環球影城 App 查看整理券與等待時間</li>
-            <li>可考慮單人乘坐，縮短熱門設施等候時間</li>
-            <li>禁帶外食，離園後不可再次入園</li>
-          </ul>
+          <div class="tag-list" id="food-tags" aria-live="polite"></div>
+          <form class="food-tag-form" id="food-tag-form">
+            <input id="food-tag-input" type="text" maxlength="30" placeholder="新增想吃的項目，例如：抹茶甜點" autocomplete="off" />
+            <button class="button button-quiet button-small" type="submit">＋ 新增</button>
+          </form>
+          <p class="card-note">用 Tabelog 找在地美食；熱門店家與 Pokémon Café 記得先預約。新增或刪除 Tag 會保存在這台裝置的瀏覽器裡。</p>
         </article>
       </div>
     </section>

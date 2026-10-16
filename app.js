@@ -1,4 +1,5 @@
 const mapFor = (query) => `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(query)}`;
+const tabelogFor = (query) => `https://tabelog.com/rstLst/?sk=${encodeURIComponent(query)}`;
 
 const stop = (time, name, note, transport, hours, detail, source = '') => ({
   time,
@@ -11,10 +12,12 @@ const stop = (time, name, note, transport, hours, detail, source = '') => ({
   map: mapFor(name)
 });
 
-const restaurant = (name, note, query = name) => ({
+const restaurant = (name, note, query = name, official = '') => ({
   name,
   note,
-  map: mapFor(query)
+  map: mapFor(query),
+  tabelog: tabelogFor(query),
+  official
 });
 
 const days = [
@@ -97,9 +100,9 @@ const days = [
     ]
   },
   {
-    number: '05', date: '11/28', city: 'AMANOHASHIDATE', title: '天橋立雙展望台自助日',
+    number: '05', date: '11/28', city: 'AMANOHASHIDATE', title: '天橋立雙展望台自助行',
     route: '京都 → View Land → 觀光船 → 傘松公園',
-    intro: '採納自助版本：先看距離車站較近的 View Land，再搭觀光船到一之宮方向前往傘松公園。可以兩個都去，但需要準時搭車，不能把沙洲全程徒步當成主要交通。',
+    intro: '採用自助行程：先前往距離車站較近的 View Land，再搭觀光船到一之宮，步行前往傘松公園。兩座展望台一天內都能安排，但必須配合列車與船班，不宜把完整穿越沙洲安排成主要交通方式。',
     map: 'https://www.google.com/maps/dir/?api=1&origin=天橋立駅&destination=傘松公園&travelmode=transit',
     restaurants: [
       restaurant('天橋立站／智恩寺周邊午餐', '建議回到車站一側用餐；若要在一之宮吃飯，請依觀光船班次安排。', '天橋立站 餐廳'),
@@ -140,12 +143,21 @@ const days = [
   {
     number: '07', date: '11/30', city: 'OSAKA', title: '環球影城一日遊',
     route: '新今宮 → 西九條 → Universal City',
-    intro: '把一整天交給 USJ。提早抵達、先衝超級瑪利歐世界，再依等待時間與 App 排出自己的冒險順序。',
+    intro: '把一整天交給 USJ。先從超級瑪利歐世界開始，再依園區動線安排熱門設施。',
     map: 'https://www.google.com/maps/dir/?api=1&origin=新今宮駅&destination=ユニバーサル・スタジオ・ジャパン&travelmode=transit',
+    guide: {
+      kicker: 'USJ NOTE',
+      title: '環球影城攻略',
+      items: [
+        '善用 USJ App 查看整理券、區域入場與即時等待時間。',
+        '可考慮單人乘坐，縮短熱門設施的等候時間。',
+        '園內禁帶外食，離園後不可再次入園；午餐與回程時間要先留意。'
+      ]
+    },
     stops: [
-      stop('06:30–07:10', '新今宮 → Universal City', '在西九條站轉 JR 夢咲線，提早抵達排隊。', 'JR 大阪環狀線／夢咲線', '依當日班次；園區開園時間可能提前', 'Excel 的交通方向正確；建議使用 USJ App 查看即時入場與整理券。'),
-      stop('開園後', '超級瑪利歐世界', '通常是最熱門區域，優先處理整理券與熱門設施。', '步行', 'USJ 每日開園／閉園時間浮動，依官方公告', '不要把 Excel 的 09:00–20:30 當成固定時間；官方可能臨時提前開園。', 'https://www.usj.co.jp/web/en/us'),
-      stop('白天', '庫巴・咚奇剛・哈利波特', '依 App 等待時間調整：庫巴挑戰書、咚奇剛瘋狂礦車、禁忌之旅。', '園內步行', '依 USJ 當日運營時間', '超級任天堂世界入場可能需要區域入場券或整理券。', 'https://www.usj.co.jp/web/en/us'),
+      stop('06:30–07:10', '新今宮 → Universal City', '在西九條站轉 JR 夢咲線，抵達 Universal City 後步行前往園區。', 'JR 大阪環狀線／夢咲線', '依當日班次；Day 7 園區 09:00 開園', '交通方向正確；抵達後依現場動線前往園區入口。'),
+      stop('09:00–20:30', '超級瑪利歐世界', '入園後先確認區域入場與整理券，再安排熱門設施。', '步行', 'Day 7（11/30）官方營運時間：09:00–20:30', '當日實際入場與區域入場規則，請以官方公告為準。', 'https://www.usj.co.jp/web/en/us'),
+      stop('白天', '庫巴・咚奇剛・哈利波特', '依 App 等待時間調整：庫巴挑戰書、咚奇剛瘋狂礦車、禁忌之旅。', '園內步行', '依 USJ 當日運營時間', '熱門設施與期間限定活動會依當日營運狀況調整。', 'https://www.usj.co.jp/web/en/us'),
       stop('下午', '小小兵・Hollywood 區', '小小兵瘋狂乘車遊，以及當期活動（例如芙莉蓮）依公告為準。', '園內步行', '依當期活動公告', '設施與期間限定活動可能因日期調整，出發前查看官方 App。', 'https://www.usj.co.jp/web/en/us'),
       stop('20:30–21:30', 'USJ → 飯店', '離園後搭 JR 返回新今宮，晚餐可安排在新世界。', 'JR 夢咲線／大阪環狀線', '依末班車與園區散場人潮', '不要壓最後一班車，離園後先確認轉乘方向。')
     ]
@@ -198,6 +210,93 @@ const days = [
   }
 ];
 
+const commonResources = [
+  {
+    name: 'Google Maps',
+    type: '地圖與導航',
+    note: '查路線、附近店家、營業狀態與步行時間。',
+    url: 'https://www.google.com/maps'
+  },
+  {
+    name: 'Tabelog／食べログ',
+    type: '餐廳評價與訂位',
+    note: '查日本在地評價、候位與訂位資訊。',
+    url: 'https://tabelog.com/'
+  },
+  {
+    name: '日本氣象廳',
+    type: '天氣與警報',
+    note: '天橋立、纜車與觀光船出發前的天候確認。',
+    url: 'https://www.jma.go.jp/jma/indexe.html'
+  },
+  {
+    name: 'Google 翻譯',
+    type: '旅途中溝通',
+    note: '翻譯菜單、告示與臨時需要說明的內容。',
+    url: 'https://translate.google.com/'
+  }
+];
+
+const dailyResources = [
+  [
+    { name: 'JR 西日本', type: '交通官方', note: '確認 HARUKA 與京都方向的班次。', url: 'https://www.westjr.co.jp/global/tc/' },
+    { name: 'KIX 關西機場', type: '機場官方', note: '確認航廈、航班與機場交通。', url: 'https://www.kansai-airport.or.jp/tw/' }
+  ],
+  [
+    { name: '清水寺官方', type: '景點官方', note: '確認開放時間與特別拝觀。', url: 'https://www.kiyomizudera.or.jp/en/' },
+    { name: '京都觀光官方', type: '城市資訊', note: '查京都景點與旅途中公告。', url: 'https://ja.kyoto.travel/' }
+  ],
+  [
+    { name: '二條城官方', type: '景點官方', note: '確認開城時間、休城日與入場資訊。', url: 'https://nijo-jocastle.city.kyoto.lg.jp/?lang=en' },
+    { name: '金閣寺官方', type: '景點官方', note: '確認參拜時間與入場資訊。', url: 'https://www.shokoku-ji.jp/kinkakuji/' }
+  ],
+  [
+    { name: '嵯峨野觀光鐵道', type: '交通官方', note: '確認小火車班次、票券與休業日。', url: 'https://www.sagano-kanko.co.jp/en/' },
+    { name: '天龍寺官方', type: '景點官方', note: '確認庭園與諸堂的開放時間。', url: 'https://www.tenryuji.com/en/' }
+  ],
+  [
+    { name: 'JR 西日本', type: '交通官方', note: '確認天橋立特急與指定席。', url: 'https://www.westjr.co.jp/global/tc/' },
+    { name: 'View Land', type: '景點官方', note: '確認纜車、吊椅與展望台運行狀態。', url: 'https://www.viewland.jp/' },
+    { name: '天橋立觀光協會', type: '地方資訊', note: '確認觀光船、傘松公園與天候相關資訊。', url: 'https://www.amano-hashidate.com/' }
+  ],
+  [
+    { name: '大阪 Metro', type: '交通官方', note: '確認心齋橋、難波與新世界的轉乘。', url: 'https://subway.osakametro.co.jp/cht/' },
+    { name: '道頓堀觀光協會', type: '地方資訊', note: '查道頓堀周邊觀光與店家資訊。', url: 'https://www.dotonbori.or.jp/' }
+  ],
+  [
+    { name: 'USJ 官方網站', type: '園區官方', note: '確認開園時間、設施與期間限定活動。', url: 'https://www.usj.co.jp/web/zh/tw/' }
+  ],
+  [
+    { name: '大阪城官方', type: '景點官方', note: '確認天守閣、御座船與公園資訊。', url: 'https://www.osakacastle.net/' },
+    { name: 'Spa World', type: '設施官方', note: '確認入館規定、浴場與營業資訊。', url: 'https://www.spaworld.co.jp/english/' }
+  ],
+  [
+    { name: '大阪 Metro', type: '交通官方', note: '確認北浜、淀屋橋與天神橋筋的路線。', url: 'https://subway.osakametro.co.jp/cht/' }
+  ],
+  [
+    { name: '南海電鐵', type: '交通官方', note: '確認新今宮前往 KIX 的班次與特急券。', url: 'https://www.nankai.co.jp/traffic/railmap.html' },
+    { name: 'KIX 關西機場', type: '機場官方', note: '確認航廈、報到與前往第二航廈的接駁。', url: 'https://www.kansai-airport.or.jp/tw/' }
+  ]
+];
+
+const foodSearches = [
+  '京都站 河原町 餐廳',
+  '清水寺 祇園 餐廳',
+  '二條城 金閣寺 餐廳',
+  '嵐山 餐廳',
+  '天橋立 餐廳',
+  '心齋橋 道頓堀 餐廳',
+  'Universal City 餐廳',
+  '新世界 動物園前 餐廳',
+  '北浜 天神橋筋 餐廳',
+  '新今宮 關西機場 餐廳'
+];
+
+const defaultFoodTags = [
+  '宇治抹茶', '湯豆腐', '和牛', '大阪燒', '拉麵', '炸豬排', '壽司', '串炸',
+  '蟹料理', '海鮮／海鮮丼', '鯛魚茶泡飯', '章魚燒', '咖啡／甜點'
+];
+
 const defaultChecklist = [
   { id: 'sim', text: '購買 eSIM／實體 SIM', done: false },
   { id: 'train', text: '預訂嵯峨野小火車票', done: false },
@@ -213,7 +312,13 @@ const defaultChecklist = [
 const tabs = document.querySelector('#day-tabs');
 const detail = document.querySelector('#day-detail');
 const modal = document.querySelector('#detail-modal');
+const toolbox = document.querySelector('#toolbox-grid');
+const todayReset = document.querySelector('#today-reset');
+const foodTags = document.querySelector('#food-tags');
+const foodTagForm = document.querySelector('#food-tag-form');
+const foodTagKey = 'kyoto-osaka-food-tags-v1';
 const checklistKey = 'kyoto-osaka-checklist-v2';
+const tripYear = 2026;
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>'"]/g, (character) => ({
@@ -221,7 +326,142 @@ function escapeHtml(value = '') {
   }[character]));
 }
 
-function renderTabs(activeIndex = 0) {
+function loadFoodTags() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(foodTagKey));
+    if (!Array.isArray(saved)) return [...defaultFoodTags];
+    return [...new Set(saved
+      .filter((tag) => typeof tag === 'string')
+      .map((tag) => tag.trim())
+      .filter(Boolean))];
+  } catch (error) {
+    return [...defaultFoodTags];
+  }
+}
+
+let foodTagItems = loadFoodTags();
+
+function saveFoodTags() {
+  localStorage.setItem(foodTagKey, JSON.stringify(foodTagItems));
+}
+
+function renderFoodTags() {
+  if (!foodTagItems.length) {
+    foodTags.innerHTML = '<p class="empty-food-tags">目前沒有想吃項目，可以新增一個。</p>';
+    return;
+  }
+
+  foodTags.innerHTML = foodTagItems.map((tag) => `
+    <span class="food-tag">
+      <span>${escapeHtml(tag)}</span>
+      <button type="button" data-delete-food-tag="${escapeHtml(tag)}" aria-label="刪除 ${escapeHtml(tag)}">×</button>
+    </span>
+  `).join('');
+
+  foodTags.querySelectorAll('[data-delete-food-tag]').forEach((button) => button.addEventListener('click', () => {
+    foodTagItems = foodTagItems.filter((tag) => tag !== button.dataset.deleteFoodTag);
+    saveFoodTags();
+    renderFoodTags();
+  }));
+}
+
+function dayDateKey(day) {
+  const [month, date] = day.date.split('/');
+  return `${tripYear}-${month.padStart(2, '0')}-${date.padStart(2, '0')}`;
+}
+
+function japanTodayKey() {
+  const parts = new Intl.DateTimeFormat('en-US', {
+    timeZone: 'Asia/Tokyo',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit'
+  }).formatToParts(new Date());
+  const values = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${values.year}-${values.month}-${values.day}`;
+}
+
+function getTodayIndex() {
+  const today = japanTodayKey();
+  const start = dayDateKey(days[0]);
+  const exactIndex = days.findIndex((day) => dayDateKey(day) === today);
+  if (exactIndex >= 0) return exactIndex;
+  return today < start ? 0 : days.length - 1;
+}
+
+const todayIndex = getTodayIndex();
+
+function tripPhase() {
+  const today = japanTodayKey();
+  const start = dayDateKey(days[0]);
+  const end = dayDateKey(days[days.length - 1]);
+  if (today < start) return 'before';
+  if (today > end) return 'after';
+  return 'during';
+}
+
+function resourceMarkup(resource) {
+  return `
+    <a class="resource-link" href="${resource.url}" target="_blank" rel="noreferrer">
+      <span><strong>${escapeHtml(resource.name)}</strong><small>${escapeHtml(resource.type)} · ${escapeHtml(resource.note)}</small></span>
+      <b>↗</b>
+    </a>
+  `;
+}
+
+function renderToolbox(index) {
+  const daily = dailyResources[index] || [];
+  toolbox.innerHTML = `
+    <article class="toolbox-card toolbox-card-accent">
+      <span class="card-kicker">DAY ${days[index].number} · QUICK LINKS</span>
+      <h3>今天先開這些</h3>
+      <p class="toolbox-note">依 ${days[index].city} 今日路線整理的官方入口，出發前與途中都可以快速確認。</p>
+      <div class="resource-list">
+        ${daily.map(resourceMarkup).join('')}
+      </div>
+    </article>
+    <article class="toolbox-card">
+      <span class="card-kicker">ALWAYS USEFUL</span>
+      <h3>隨身入口</h3>
+      <p class="toolbox-note">地圖、餐廳、天氣與翻譯等，不依日期都能直接使用。</p>
+      <div class="resource-list">
+        ${commonResources.map(resourceMarkup).join('')}
+      </div>
+    </article>
+  `;
+}
+
+function renderTodayDashboard(index) {
+  const day = days[index];
+  const phase = tripPhase();
+  const isToday = index === todayIndex;
+  const phaseLabel = phase === 'before'
+    ? `BEFORE THE TRIP · DAY ${day.number}`
+    : phase === 'after'
+      ? `TRIP COMPLETE · DAY ${day.number}`
+      : `TODAY · DAY ${day.number}`;
+  const title = !isToday
+    ? day.title
+    : phase === 'before'
+      ? '先從 Day 1 開始準備。'
+      : phase === 'after'
+        ? '旅程完成，回看最後一天。'
+        : '今天，先看這裡。';
+
+  document.querySelector('#today-kicker').textContent = isToday ? phaseLabel : `PLAN PREVIEW · DAY ${day.number}`;
+  document.querySelector('#today-title').textContent = title;
+  document.querySelector('#today-intro').textContent = day.intro;
+  document.querySelector('#today-status').textContent = isToday ? `${day.date} · ${day.city}` : `${day.date} · ${day.city} · 預覽`;
+  document.querySelector('#today-date').textContent = `${day.date} / ${tripYear}`;
+  document.querySelector('#today-route').textContent = day.route;
+  document.querySelector('#today-next-stop').textContent = day.stops[0]?.name || '—';
+  document.querySelector('#today-note').textContent = day.stops[0]?.note || '依當日狀況彈性安排。';
+  document.querySelector('#today-map-link').href = day.map;
+  document.querySelector('#today-food-link').textContent = `查看 Day ${day.number} 餐廳`;
+  todayReset.hidden = isToday;
+}
+
+function renderTabs(activeIndex = todayIndex) {
   tabs.innerHTML = days.map((day, index) => `
     <button class="day-tab" type="button" role="tab" aria-selected="${index === activeIndex}" aria-controls="day-detail" data-day="${index}">
       <small>DAY ${day.number}</small>
@@ -240,6 +480,8 @@ function renderTabs(activeIndex = 0) {
 
 function renderDay(index) {
   const day = days[index];
+  renderTodayDashboard(index);
+  renderToolbox(index);
   detail.innerHTML = `
     <div class="day-summary">
       <p class="eyebrow">DAY ${day.number} · ${day.city}</p>
@@ -247,6 +489,13 @@ function renderDay(index) {
       <p>${day.intro}</p>
       <p class="date">${day.date} / 2026</p>
       <span class="route-pill">${day.route}</span>
+      ${day.guide ? `
+        <div class="day-guide">
+          <p class="day-guide-kicker">${day.guide.kicker}</p>
+          <h4>${day.guide.title}</h4>
+          <ul>${day.guide.items.map((item) => `<li>${escapeHtml(item)}</li>`).join('')}</ul>
+        </div>
+      ` : ''}
     </div>
     <div class="day-stops">
       <div class="day-stops-head">
@@ -268,14 +517,32 @@ function renderDay(index) {
           </li>
         `).join('')}
       </ol>
-      ${day.restaurants && day.restaurants.length ? `
-        <div class="restaurant-box">
-          <div class="restaurant-box-heading"><span class="card-kicker">FROM EXCEL / FOOD</span><h4>餐廳備選</h4></div>
+      <div class="restaurant-box">
+        <div class="restaurant-box-heading"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
+        ${day.restaurants && day.restaurants.length ? `
+          <p class="restaurant-intro">已整理的候選優先放在前面；以下連結可分別查看地圖、Tabelog 與官方資訊。</p>
           <div class="restaurant-list">
-            ${day.restaurants.map((item) => `<a class="restaurant-item" href="${item.map}" target="_blank" rel="noreferrer"><strong>${item.name}</strong><span>${item.note}</span><b>↗</b></a>`).join('')}
+            ${day.restaurants.map((item) => `
+              <article class="restaurant-item">
+                <strong>${escapeHtml(item.name)}</strong>
+                <span>${escapeHtml(item.note)}</span>
+                <div class="restaurant-actions">
+                  <a href="${item.map}" target="_blank" rel="noreferrer">Google Maps ↗</a>
+                  <a href="${item.tabelog}" target="_blank" rel="noreferrer">Tabelog ↗</a>
+                  ${item.official ? `<a href="${item.official}" target="_blank" rel="noreferrer">官方網站 ↗</a>` : ''}
+                </div>
+              </article>
+            `).join('')}
+          </div>
+        ` : '<p class="restaurant-intro">今天尚未整理固定候選，可以先從附近搜尋開始。</p>'}
+        <div class="restaurant-discovery">
+          <div><strong>附近探索</strong><span>依今天的區域查找高評價餐廳，營業狀態與訂位規則請以店家資訊為準。</span></div>
+          <div class="restaurant-discovery-links">
+            <a href="${tabelogFor(foodSearches[index])}" target="_blank" rel="noreferrer">Tabelog 附近搜尋 ↗</a>
+            <a href="${mapFor(foodSearches[index])}" target="_blank" rel="noreferrer">Google Maps 附近搜尋 ↗</a>
           </div>
         </div>
-      ` : ''}
+      </div>
     </div>
   `;
 
@@ -361,6 +628,23 @@ function renderChecklist() {
   }));
 }
 
+foodTagForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const input = document.querySelector('#food-tag-input');
+  const text = input.value.trim();
+  if (!text) return;
+  const duplicate = foodTagItems.some((tag) => tag.toLocaleLowerCase() === text.toLocaleLowerCase());
+  if (duplicate) {
+    input.select();
+    return;
+  }
+  foodTagItems.push(text);
+  saveFoodTags();
+  renderFoodTags();
+  input.value = '';
+  input.focus();
+});
+
 document.querySelector('#checklist-form').addEventListener('submit', (event) => {
   event.preventDefault();
   const input = document.querySelector('#checklist-input');
@@ -390,6 +674,13 @@ mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', (
   menuToggle.setAttribute('aria-expanded', 'false');
 }));
 
-renderTabs();
-renderDay(0);
+todayReset.addEventListener('click', () => {
+  renderTabs(todayIndex);
+  renderDay(todayIndex);
+  document.querySelector('#today').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+
+renderTabs(todayIndex);
+renderDay(todayIndex);
+renderFoodTags();
 renderChecklist();
