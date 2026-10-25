@@ -119,13 +119,41 @@
       <article class="day-detail" id="day-detail" aria-live="polite"></article>
     </section>
 
+    <!-- 每日行程下方的共用範本 (供 app.js 渲染使用) -->
+    <template id="day-restaurant-template">
+      <div class="restaurant-box">
+        <div class="restaurant-box-heading"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
+        <div class="restaurant-candidates-container"></div>
+
+        <!-- 已訂位區塊 -->
+        <div class="restaurant-box-heading" style="margin-top: 24px;">
+          <span class="card-kicker">RESERVED</span>
+          <h4>已訂位</h4>
+        </div>
+        <div class="reservation-list restaurant-list" style="margin-top: 10px;"></div>
+        
+        <!-- 調整為明確的兩行排版，避免時間欄位被 CSS 擠壓切掉 -->
+        <form id="reservation-form" style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px;">
+          <div style="display: flex; gap: 10px;">
+            <input id="res-time" type="text" placeholder="時間 (例: 19:00)" style="flex: 0 0 110px; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" required />
+            <input id="res-name" type="text" placeholder="餐廳名稱" style="flex: 1 1 auto; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" required />
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <input id="res-url" type="url" placeholder="連結（選填）" style="flex: 1 1 auto; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" />
+            <button class="button button-primary button-small" type="submit" style="flex: 0 0 110px; white-space: nowrap;">＋ 新增訂位</button>
+          </div>
+        </form>
+
+        <div class="restaurant-discovery-container" style="margin-top: 20px;"></div>
+      </div>
+    </template>
+
     <section class="feature-band">
       <div class="section-shell feature-grid">
         <div>
           <p class="eyebrow eyebrow-light">TRAVEL NOTE</p>
           <h2>早起一點，京都會把最安靜的風景留給你。</h2>
         </div>
-        <p>Day 5 會把天橋立的兩個展望台都排進行程：先前往距離車站較近的 View Land，再搭觀光船到一之宮，步行前往傘松公園。兩座展望台一天內都能安排，但必須配合列車與船班，不宜把完整穿越沙洲安排成主要交通方式。</p>
       </div>
     </section>
 
@@ -144,7 +172,7 @@
             <input id="food-tag-input" type="text" maxlength="30" placeholder="新增想吃的項目，例如：抹茶甜點" autocomplete="off" />
             <button class="button button-quiet button-small" type="submit">＋ 新增</button>
           </form>
-          <p class="card-note">用 Tabelog 找在地美食；熱門店家與 Pokémon Café 記得先預約。新增或刪除 Tag 會保存在這台裝置的瀏覽器裡。</p>
+          <p class="card-note">用 Tabelog 找在地美食；熱門店家與 Pokémon Café 記得先預約。新增或刪除 Tag 會自動同步至雲端，所有旅伴皆可即時查看。</p>
         </article>
       </div>
     </section>
@@ -160,7 +188,7 @@
             </div>
             <button class="button button-small button-quiet" id="clear-completed" type="button">清除已完成</button>
           </div>
-          <p class="notes-help">勾選、刪除或新增項目都會保存在這台裝置的瀏覽器裡；目前不會同步到其他裝置。</p>
+          <p class="notes-help">勾選、刪除或新增項目都會自動同步至雲端，旅伴們也能同步看到最新進度！</p>
           <form class="checklist-form" id="checklist-form">
             <input id="checklist-input" type="text" maxlength="100" placeholder="新增待確認事項，例如：預約傘松公園纜車" autocomplete="off" />
             <button class="button button-primary button-small" type="submit">＋ 新增</button>

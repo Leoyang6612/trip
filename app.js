@@ -309,6 +309,11 @@ const defaultChecklist = [
   { id: 'hours', text: '出發前重新確認景點開放時間與休館日', done: false }
 ];
 
+// --- JSONBin.io API Configuration ---
+const JSONBIN_BIN_ID = '6adcd619ffd5d16053888d36';
+const JSONBIN_API_KEY = '$2a$10$iu/NXYLDsqe7jNFzScj8U.cd/QPOsfHUJOOBIRaeQb/TKabd5J6KC';
+const JSONBIN_URL = `https://api.jsonbin.io/v3/b/${JSONBIN_BIN_ID}`;
+
 const tabs = document.querySelector('#day-tabs');
 const detail = document.querySelector('#day-detail');
 const modal = document.querySelector('#detail-modal');
@@ -316,9 +321,12 @@ const toolbox = document.querySelector('#toolbox-grid');
 const todayReset = document.querySelector('#today-reset');
 const foodTags = document.querySelector('#food-tags');
 const foodTagForm = document.querySelector('#food-tag-form');
-const foodTagKey = 'kyoto-osaka-food-tags-v1';
-const checklistKey = 'kyoto-osaka-checklist-v2';
 const tripYear = 2026;
+
+let currentSelectedDayIndex = 0;
+let checklist = [];
+let foodTagItems = [];
+let reservations = [];
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>'"]/g, (character) => ({
@@ -326,23 +334,56 @@ function escapeHtml(value = '') {
   }[character]));
 }
 
-function loadFoodTags() {
+// --- Unified JSONBin.io Cloud Sync Methods ---
+async function loadCloudData() {
+  const list = document.querySelector('#check-list');
+  if (list) list.innerHTML = '<li class="empty-checklist">載入雲端資料中...</li>';
+  if (foodTags) foodTags.innerHTML = '<p class="empty-food-tags">載入雲端想吃清單中...</p>';
+
   try {
-    const saved = JSON.parse(localStorage.getItem(foodTagKey));
-    if (!Array.isArray(saved)) return [...defaultFoodTags];
-    return [...new Set(saved
-      .filter((tag) => typeof tag === 'string')
-      .map((tag) => tag.trim())
-      .filter(Boolean))];
+    const response = await fetch(`${JSONBIN_URL}/latest`, {
+      headers: {
+        'X-Master-Key': JSONBIN_API_KEY
+      }
+    });
+    if (!response.ok) throw new Error('無法從雲端載入資料');
+    const data = await response.json();
+    const record = data.record || {};
+
+    checklist = Array.isArray(record.checklist) ? record.checklist : defaultChecklist.map((item) => ({ ...item }));
+    foodTagItems = Array.isArray(record.foodTags) ? record.foodTags : [...defaultFoodTags];
+    reservations = Array.isArray(record.reservations) ? record.reservations : [];
   } catch (error) {
-    return [...defaultFoodTags];
+    console.error('載入雲端資料失敗，改用預設值', error);
+    checklist = defaultChecklist.map((item) => ({ ...item }));
+    foodTagItems = [...defaultFoodTags];
+    reservations = [];
   }
+
+  renderChecklist();
+  renderFoodTags();
+  renderDay(currentSelectedDayIndex);
 }
 
-let foodTagItems = loadFoodTags();
-
-function saveFoodTags() {
-  localStorage.setItem(foodTagKey, JSON.stringify(foodTagItems));
+async function saveCloudData() {
+  try {
+    const response = await fetch(JSONBIN_URL, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': JSONBIN_API_KEY
+      },
+      body: JSON.stringify({
+        checklist,
+        foodTags: foodTagItems,
+        reservations
+      })
+    });
+    if (!response.ok) throw new Error('更新雲端資料失敗');
+  } catch (error) {
+    console.error('儲存失敗', error);
+    alert('同步至雲端失敗，請檢查網路連線。');
+  }
 }
 
 function renderFoodTags() {
@@ -358,10 +399,10 @@ function renderFoodTags() {
     </span>
   `).join('');
 
-  foodTags.querySelectorAll('[data-delete-food-tag]').forEach((button) => button.addEventListener('click', () => {
+  foodTags.querySelectorAll('[data-delete-food-tag]').forEach((button) => button.addEventListener('click', async () => {
     foodTagItems = foodTagItems.filter((tag) => tag !== button.dataset.deleteFoodTag);
-    saveFoodTags();
     renderFoodTags();
+    await saveCloudData();
   }));
 }
 
@@ -479,9 +520,13 @@ function renderTabs(activeIndex = todayIndex) {
 }
 
 function renderDay(index) {
+  currentSelectedDayIndex = index;
   const day = days[index];
   renderTodayDashboard(index);
   renderToolbox(index);
+
+  const dayReservations = reservations.filter((res) => res.dayIndex === index);
+
   detail.innerHTML = `
     <div class="day-summary">
       <p class="eyebrow">DAY ${day.number} · ${day.city}</p>
@@ -535,7 +580,31 @@ function renderDay(index) {
             `).join('')}
           </div>
         ` : '<p class="restaurant-intro">今天尚未整理固定候選，可以先從附近搜尋開始。</p>'}
-        <div class="restaurant-discovery">
+
+        <!-- 已訂位區塊 -->
+        <div class="restaurant-box-heading" style="margin-top: 24px;">
+          <span class="card-kicker">RESERVED</span>
+          <h4>已訂位</h4>
+        </div>
+        <div id="reservation-list" class="restaurant-list" style="margin-top: 10px;">
+          ${dayReservations.length ? dayReservations.map((res) => `
+            <article class="restaurant-item">
+              <strong>${escapeHtml(res.time)} · ${escapeHtml(res.name)}</strong>
+              <div class="restaurant-actions">
+                ${res.url ? `<a href="${escapeHtml(res.url)}" target="_blank" rel="noreferrer">開啟訂位連結 ↗</a>` : ''}
+                <button type="button" class="delete-check" data-delete-res="${res.id}" style="color:var(--red); font-size:11px; cursor:pointer; border:0; background:none;">刪除</button>
+              </div>
+            </article>
+          `).join('') : '<p class="restaurant-intro">今天尚無已訂位餐廳。</p>'}
+        </div>
+        <form id="reservation-form" class="checklist-form" style="margin-top: 12px; flex-wrap: wrap;">
+          <input id="res-time" type="text" placeholder="時間（例：19:00）" style="flex: 1 1 100px;" required />
+          <input id="res-name" type="text" placeholder="餐廳名稱" style="flex: 2 1 150px;" required />
+          <input id="res-url" type="url" placeholder="連結（選填）" style="flex: 2 1 150px;" />
+          <button class="button button-primary button-small" type="submit">＋ 新增訂位</button>
+        </form>
+
+        <div class="restaurant-discovery" style="margin-top: 20px;">
           <div><strong>附近探索</strong><span>依今天的區域查找高評價餐廳，營業狀態與訂位規則請以店家資訊為準。</span></div>
           <div class="restaurant-discovery-links">
             <a href="${tabelogFor(foodSearches[index])}" target="_blank" rel="noreferrer">Tabelog 附近搜尋 ↗</a>
@@ -548,6 +617,36 @@ function renderDay(index) {
 
   detail.querySelectorAll('.detail-button').forEach((button) => {
     button.addEventListener('click', () => openModal(Number(button.dataset.day), Number(button.dataset.stop)));
+  });
+
+  const resForm = detail.querySelector('#reservation-form');
+  if (resForm) {
+    resForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const time = detail.querySelector('#res-time').value.trim();
+      const name = detail.querySelector('#res-name').value.trim();
+      const url = detail.querySelector('#res-url').value.trim();
+      if (!time || !name) return;
+
+      reservations.push({
+        id: `res-${Date.now()}`,
+        dayIndex: index,
+        time,
+        name,
+        url
+      });
+      renderDay(index);
+      await saveCloudData();
+    });
+  }
+
+  detail.querySelectorAll('[data-delete-res]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      const resId = button.dataset.deleteRes;
+      reservations = reservations.filter((r) => r.id !== resId);
+      renderDay(index);
+      await saveCloudData();
+    });
   });
 }
 
@@ -587,21 +686,6 @@ document.addEventListener('keydown', (event) => {
   if (event.key === 'Escape' && !modal.hidden) closeModal();
 });
 
-function loadChecklist() {
-  try {
-    const saved = JSON.parse(localStorage.getItem(checklistKey));
-    return Array.isArray(saved) ? saved : defaultChecklist.map((item) => ({ ...item }));
-  } catch (error) {
-    return defaultChecklist.map((item) => ({ ...item }));
-  }
-}
-
-let checklist = loadChecklist();
-
-function saveChecklist() {
-  localStorage.setItem(checklistKey, JSON.stringify(checklist));
-}
-
 function renderChecklist() {
   const list = document.querySelector('#check-list');
   if (!checklist.length) {
@@ -615,20 +699,22 @@ function renderChecklist() {
     </li>
   `).join('');
 
-  list.querySelectorAll('[data-check-id]').forEach((input) => input.addEventListener('change', () => {
+  list.querySelectorAll('[data-check-id]').forEach((input) => input.addEventListener('change', async () => {
     const item = checklist.find((entry) => entry.id === input.dataset.checkId);
-    if (item) item.done = input.checked;
-    saveChecklist();
-    renderChecklist();
+    if (item) {
+      item.done = input.checked;
+      renderChecklist();
+      await saveCloudData();
+    }
   }));
-  list.querySelectorAll('[data-delete-id]').forEach((button) => button.addEventListener('click', () => {
+  list.querySelectorAll('[data-delete-id]').forEach((button) => button.addEventListener('click', async () => {
     checklist = checklist.filter((item) => item.id !== button.dataset.deleteId);
-    saveChecklist();
     renderChecklist();
+    await saveCloudData();
   }));
 }
 
-foodTagForm.addEventListener('submit', (event) => {
+foodTagForm.addEventListener('submit', async (event) => {
   event.preventDefault();
   const input = document.querySelector('#food-tag-input');
   const text = input.value.trim();
@@ -639,28 +725,28 @@ foodTagForm.addEventListener('submit', (event) => {
     return;
   }
   foodTagItems.push(text);
-  saveFoodTags();
   renderFoodTags();
   input.value = '';
   input.focus();
+  await saveCloudData();
 });
 
-document.querySelector('#checklist-form').addEventListener('submit', (event) => {
+document.querySelector('#checklist-form').addEventListener('submit', async (event) => {
   event.preventDefault();
   const input = document.querySelector('#checklist-input');
   const text = input.value.trim();
   if (!text) return;
   checklist.push({ id: `custom-${Date.now()}`, text, done: false });
-  saveChecklist();
   renderChecklist();
   input.value = '';
   input.focus();
+  await saveCloudData();
 });
 
-document.querySelector('#clear-completed').addEventListener('click', () => {
+document.querySelector('#clear-completed').addEventListener('click', async () => {
   checklist = checklist.filter((item) => !item.done);
-  saveChecklist();
   renderChecklist();
+  await saveCloudData();
 });
 
 const menuToggle = document.querySelector('.menu-toggle');
@@ -680,7 +766,10 @@ todayReset.addEventListener('click', () => {
   document.querySelector('#today').scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
 
-renderTabs(todayIndex);
-renderDay(todayIndex);
-renderFoodTags();
-renderChecklist();
+async function initApp() {
+  renderTabs(todayIndex);
+  renderDay(todayIndex);
+  await loadCloudData();
+}
+
+initApp();
