@@ -45,42 +45,42 @@ const days = [
     ],
     stops: [
       stop('07:00–07:30', '飯店 → 清水寺', 'Excel 中的 HARUKA 不適用京都市區；網站推薦計程車，替代方案是公車。', '推薦：計程車；替代：市營巴士', '道路交通依早晨路況', '早上直接前往清水寺可避免公車塞車，也能保留更多參觀時間。'),
-      stop('07:30–09:30', '清水寺', '建議 08:00 前抵達，參觀本堂、清水舞台與音羽瀑布。', '步行', '常態參考：06:00–18:00；特別夜間拝觀時段另計', '營業時間會因季節與特別拝觀調整，出發前請查看官方公告。', 'https://www.kiyomizudera.or.jp/en/'),
-      stop('09:30–10:30', '三年坂・二年坂・法觀寺', '沿古街散步，拍攝經典的八坂之塔；順路到八坂庚申堂。', '步行', '街區為戶外道路，全天可通行；各店家時間不同', '古街可以早晨散步，但商店尚未全部開門；請勿阻塞巷道或拍攝私有場所。'),
-      stop('10:30–11:00', '八坂庚申堂', '位於八坂之塔下方，以色彩斑斕的倒吊猴束縛福袋聞名。', '步行', '寺院授與所時間依當日公告；外部街區可步行', '建議把它當成沿途短停景點，不要為了等待開門打亂整條路線。'),
-      stop('11:00–12:00', '高台寺・寧寧之道', '穿過寧寧之道即可抵達；枯山水庭園與竹林適合放慢腳步。', '步行', '常態參考：09:00–17:30；最後入場約 17:00', '夜間特別拝觀與季節活動可能改變開放時間。', 'https://www.kodaiji.com/e_index.html'),
+      stop('07:30–09:30', '清水寺', '建議 08:00 前抵達，參觀本堂、清水舞台與音羽瀑布。', '步行', '11/25：06:00–21:30（秋季夜間特別拝觀，最後入場21:00）', '2026 年官方秋季夜間特別拝觀期間為 11/21–11/30；目前行程安排早上參觀。', 'https://www.kiyomizudera.or.jp/en/location/'),
+      stop('09:30–10:30', '三年坂・二年坂・法觀寺', '沿古街散步，拍攝經典的八坂之塔；順路到八坂庚申堂。', '步行', '街道全天可通行；法觀寺八坂塔內部 10:00–15:00（不定休）', '店家各自營業；如要入塔，開放時間較短且可能臨時休止，建議先確認。', 'https://www.kyoto-kankou.or.jp/info_search/128'),
+      stop('10:30–11:00', '八坂庚申堂', '位於八坂之塔下方，以色彩斑斕的倒吊猴束縛福袋聞名。', '步行', '每日 09:00–17:00', '開放時間參考通稱寺之會資訊，臨時變動請以現場公告為準。', 'https://tusyoji.wixsite.com/tusyojinokai/yasakakousindou'),
+      stop('11:00–12:00', '高台寺・寧寧之道', '穿過寧寧之道即可抵達；枯山水庭園與竹林適合放慢腳步。', '步行', '日間 09:00–17:30（最後入場17:00）；2026秋季夜間 17:00–22:00（最後入場21:30）', '2026 年秋季夜間特別拝觀期間為 10/23–12/13；本行程安排上午參觀。', 'https://www.kodaiji.com/haikan.html'),
       stop('12:00–13:30', '午餐時間', '可在寧寧之道、石塀小路或八坂神社前的祇園商店街用餐。', '步行', '餐廳各自營業；熱門店家可能需要排隊', '建議把午餐視為彈性時段，依當天排隊狀況選店。'),
-      stop('13:30–14:30', '八坂神社', '欣賞舞殿燈籠，可到美御前社參拜。', '步行', '神社境內通常可自由參拜；授與所時間依官方公告', '境內戶外區域可作為步行路線的一部分，授與所與社務所另有時間。'),
-      stop('14:30–15:30', '建仁寺', '京都最古老禪寺之一，法堂雙龍圖與庭園是參觀重點。', '步行', '常態參考：10:00–17:00；最後入場約 16:30', '若遇寺院行事，部分區域可能臨時關閉。'),
-      stop('15:30–16:30', '花見小路', '傍晚有機會遇到前往工作的藝伎；兩側私有巷弄嚴禁拍照。', '步行', '街區戶外全天；店舖與私人區域各自管理', '請遵守祇園拍攝禮儀，不追拍藝伎，也不要進入禁止拍照的巷弄。'),
-      stop('16:30–17:30', '祇園白川', '沿木造町家與白川散步，傍晚點燈後氣氛很好。', '步行', '戶外街區全天；沿岸店家各自營業', '這段不需要門票，適合依體力延長或提前結束。')
+      stop('13:30–14:30', '八坂神社', '欣賞舞殿燈籠，可到美御前社參拜。', '步行', '境內關閉時間未列；社務所／授與所 09:00–17:00', '如需御守、御朱印等，請於社務所接待時間內前往。', 'https://www.yasaka-jinja.or.jp/access/'),
+      stop('14:30–15:30', '建仁寺', '京都最古老禪寺之一，法堂雙龍圖與庭園是參觀重點。', '步行', '每日 10:00–17:00（最後受理16:30）', '參觀時間可能受寺院行事影響，出發前確認官方公告。', 'https://www.kenninji.jp/access/'),
+      stop('15:30–16:30', '花見小路', '傍晚有機會遇到前往工作的藝伎；兩側私有巷弄嚴禁拍照。', '步行', '公共街道無固定開放時間；店鋪各自營業', '請遵守祇園拍攝禮儀，不追拍藝伎，也不要進入禁止拍照的巷弄。'),
+      stop('16:30–17:30', '祇園白川', '沿木造町家與白川散步，傍晚點燈後氣氛很好。', '步行', '戶外公共街區無固定開放時間；沿岸店家各自營業', '這段不需要門票，適合依體力延長或提前結束。')
     ]
   },
   {
-    number: '03', date: '11/26', city: 'KYOTO', title: '經典三大世界遺產縱跨線',
-    route: '伏見稻荷 → 二條城 → 金閣寺',
-    intro: '用鐵道與公車串起京都的三種風景：千本鳥居、幕府御殿與鏡湖池的金色倒影。早起，是這條路線順利的關鍵。',
-    map: 'https://www.google.com/maps/dir/?api=1&origin=伏見稻荷大社&destination=金閣寺&travelmode=transit',
+    number: '03', date: '11/26', city: 'KYOTO', title: '經典三大世界遺產與北野夜楓',
+    route: '伏見稻荷 → 二條城 → 金閣寺 → 北野天滿宮',
+    intro: '放慢早上的參觀節奏，留足伏見稻荷與二條城的時間；若體力允許，傍晚到北野天滿宮欣賞紅葉苑夜間點燈。',
+    map: 'https://www.google.com/maps/dir/?api=1&origin=伏見稻荷大社&destination=北野天滿宮&waypoints=二条城%7C金閣寺&travelmode=transit',
     restaurants: [
       restaurant('京都PIZZA400度', 'Excel 推薦，位於二條城附近；請確認當日營業與候位。', '京都 PIZZA400度 二條城'),
       restaurant('Kitchen Papa 漢堡排', 'Excel 推薦，可放在金閣寺周邊午餐或備選。', 'Kitchen Papa 京都')
     ],
     stops: [
-      stop('07:00–07:30', '絆（京都）→ 伏見稻荷', '不建議全程步行；若住宿靠近清水五條，京阪線較順。', '推薦：步行至京阪＋電車；替代：JR 奈良線', '電車依當日班次', '推薦路線：清水五條／七條 → 京阪伏見稻荷；下車後步行即到神社。'),
-      stop('07:30–09:30', '伏見稻荷大社', '08:00 前抵達拍攝千本鳥居，走到奧社奉拜所後折返。', '京阪或 JR；步行', '境內可全天參拜；授與所通常約 08:30–16:30，依官方公告', '千本鳥居不必走完全程，依後續二條城時間在奧社折返。'),
-      stop('09:30–10:15', '伏見稻荷 → 二條城', '先搭京阪到三條，再轉地下鐵東西線到二條城前。', '京阪＋地下鐵東西線', '依當日班次；轉乘需步行', '比繞回京都站更符合景點方向，預留轉乘與找出口時間。'),
-      stop('10:15–12:00', '二條城', '參觀二之丸御殿，留意防範刺客的鸝鳴地板。', '步行', '常態參考：08:45–17:00；最後入城約 16:00', '二之丸御殿與庭園可能有不同的最後入場時間，請以官方公告為準。', 'https://nijo-jocastle.city.kyoto.lg.jp/?lang=en'),
-      stop('12:00–13:30', '午餐＋御金神社', '周邊町家咖啡廳，或往烏丸御池吃拉麵；時間足夠可順道參拜。', '步行', '神社境內戶外可參拜；餐廳時間各自不同', '如果二條城延遲，建議放棄御金神社，不要壓縮金閣寺停留時間。'),
-      stop('13:30–14:15', '二條城 → 金閣寺', '公車 12 號方向合理，但京都市區塞車時要留緩衝。', '市營巴士；替代：計程車', '依道路狀況與班次', '若 14:15 前一定要到，計程車是比較穩的備選。'),
-      stop('14:15–15:45', '金閣寺（鹿苑寺）', '下午陽光適合觀賞舍利殿與鏡湖池倒影。', '步行', '常態參考：09:00–17:00', '金閣寺是單向參觀路線，入口與出口都有商店與休息處。', 'https://www.shokoku-ji.jp/kinkakuji/'),
-      stop('15:45–17:00', '北野天滿宮／平野神社', '二選一：天滿宮祈求學業，或平野神社欣賞季節景色。', '步行／市營巴士', '神社境內戶外；授與所與寶物館依各自公告', '若金閣寺排隊或公車延誤，這段可直接刪除。')
+      stop('06:45–07:30', '絆（京都）→ 伏見稻荷', '建議提早出發，步行至京阪站後搭車；若路程或候車不順，可改搭計程車。', '推薦：步行至京阪＋電車；替代：JR 奈良線／計程車', '依當日班次', '出發前確認住宿至車站的步行時間，預留轉乘緩衝。'),
+      stop('07:30–10:00', '伏見稻荷大社', '清晨參拜千本鳥居，走到奧社奉拜所後折返；不必爬完全程。', '京阪或 JR；步行', '境內未列固定關閉時間；祈禱受理 08:30–16:30', '把參觀時間放寬至 2.5 小時，依體力在奧社折返；祈禱服務請於受付時間辦理。', 'https://inari.jp/grace/gokito/'),
+      stop('10:00–10:45', '伏見稻荷 → 二條城', '先搭京阪到三條，再轉地下鐵東西線到二條城前。', '京阪＋地下鐵東西線', '依當日班次；轉乘需步行', '預留步行轉乘、候車與出站找路時間。'),
+      stop('10:45–13:00', '二條城', '參觀二之丸御殿、庭園與唐門，留意防範刺客的鸝鳴地板。', '步行', '開城 08:45–17:00（最終入城16:00）；二之丸御殿受付至16:10', '安排約 2 小時 15 分鐘，若想完整逛庭園可依現場人潮延長；二之丸御殿與庭園可能因活動調整。', 'https://nijo-jocastle.city.kyoto.lg.jp/guide/annai/'),
+      stop('13:00–14:15', '午餐＋御金神社', '在二條城附近用午餐；時間足夠可順道到御金神社參拜。', '步行', '御金神社境內可參拜；社務所 10:00–16:00', '安排 75 分鐘用餐與短暫參拜。若二條城延遲，優先取消御金神社，不要壓縮金閣寺停留時間。', 'https://mikane-jinja.or.jp/sanpai/'),
+      stop('14:15–15:00', '二條城 → 金閣寺', '優先查市營巴士 12 號等路線，預留塞車緩衝；時間不足時改搭計程車。', '市營巴士；替代：計程車', '依道路狀況與班次', '預留約 45 分鐘移動時間；實際班次與路況當日確認。'),
+      stop('15:00–16:15', '金閣寺（鹿苑寺）', '參觀舍利殿與鏡湖池倒影，採單向參觀路線。', '步行', '每日 09:00–17:00', '預留約 75 分鐘；若排隊較長，可縮短商店停留時間。', 'https://www.shokoku-ji.jp/kinkakuji/faq/'),
+      stop('16:15–19:30', '北野天滿宮（紅葉苑夜間特別拝觀）', '金閣寺後前往北野天滿宮，欣賞 2026 年紅葉苑夜間點燈。', '市營巴士／步行', '11/26 紅葉苑 17:00–20:00（最終入場19:40）；三光門 16:30 閉門。', '預留金閣寺至北野天滿宮的移動與入場時間；若前段延誤或體力不足，可取消夜間行程。', 'https://kitanotenmangu.or.jp/access/')
     ]
   },
   {
     number: '04', date: '11/27', city: 'ARASHIYAMA', title: '嵐山竹林嵯峨野風情線',
-    route: 'JR 馬堀 → 小火車 → 竹林 → 天龍寺 → 桂川',
-    intro: '以 Excel 為準：先到 JR 馬堀再搭嵯峨野觀光小火車，從竹林上方一路向下走；回程推薦 JR，比嵐電轉乘更直接。',
-    map: 'https://www.google.com/maps/dir/?api=1&origin=トロッコ嵯峨駅&destination=嵐電嵐山駅&travelmode=walking',
+    route: 'JR 馬堀 → 小火車 → 竹林 → 天龍寺 → 渡月橋 → 風風之湯',
+    intro: '先搭 JR 到馬堀，再轉嵯峨野觀光小火車，沿竹林與天龍寺一路散步；傍晚到風風之湯泡湯，結束嵐山一日遊。',
+    map: 'https://www.google.com/maps/dir/?api=1&origin=JR馬堀駅&destination=風風の湯&travelmode=transit',
     restaurants: [
       restaurant('鯛匠 HANANA', 'Excel／原規劃推薦的鯛魚茶泡飯；建議提早排隊。', '鯛匠 HANANA 嵐山'),
       restaurant('嵐山湯豆腐', '嵐山大街的湯豆腐套餐，可依現場候位選擇。', '嵐山 湯豆腐')
@@ -89,14 +89,16 @@ const days = [
       stop('07:00–07:30', '絆（京都）→ 京都站', '住宿附近若靠近地鐵五條站，可搭一站到京都；也可步行／計程車。', '地鐵／步行／計程車', '依當日班次與路況', '要趕小火車時，計程車是最簡單的備選。'),
       stop('07:30–08:15', '京都 → JR 馬堀', '搭 JR 嵯峨野線，預留月台與候車時間。', 'JR 嵯峨野線', '依當日班次；小火車票需配合發車時間', 'JR 馬堀站不是小火車站，抵達後還要步行到 Torokko 龜岡。'),
       stop('08:15–08:45', 'JR 馬堀 → Torokko 龜岡', '步行約 10–15 分鐘，帶行李或人多時請抓到 20 分鐘。', '步行', '戶外道路全天可走', '請先下載離線地圖，沿指標前往小火車站。'),
-      stop('08:45–09:15', '報到／等車', '票券與座位請提早確認，避免因 JR 延誤錯過班次。', '步行', '依小火車班次', '嵯峨野觀光小火車是預約行程的關鍵，出發前先確認官方時刻。', 'https://www.sagano-kanko.co.jp/en/'),
-      stop('09:15–09:45', '嵯峨野觀光小火車', '從 Torokko 龜岡搭到 Torokko 嵐山。', '嵯峨野觀光小火車', '依季節時刻表；冬季／休業日可能調整', '這一段以官方時刻表為準，不把 09:15 視為全年固定班次。', 'https://www.sagano-kanko.co.jp/en/'),
-      stop('09:45–10:30', '嵐山竹林・野宮神社', '從竹林小徑開始，早上的人潮較少；留意黑色鳥居。', '步行', '竹林為戶外道路；野宮神社參拜時間依現場公告', '竹林沒有單一門票時段，商店與神社授與所各自營業。'),
-      stop('10:30–12:00', '天龍寺', '由北門入寺，欣賞曹源池庭園，從正門出到商店街。', '步行', '常態參考：08:30–17:30；季節可能提前閉門', '庭園與諸堂可能有不同開放時間，請以官方公告為準。', 'https://www.tenryuji.com/en/'),
-      stop('12:00–13:30', '嵐山大街午餐', '鯛匠 HANANA 或湯豆腐套餐，熱門店家建議提早排隊。', '步行', '餐廳各自營業；午餐尖峰可能候位', '若不想排隊，可將午餐改成沿途小吃，保留下午彈性。'),
-      stop('13:30–15:00', '常寂光寺／祐齋亭', '二選一：桂川窗景倒影，或依山而建的幽靜古剎。', '步行', '各自有季節性營業與休館安排', '祐齋亭通常需要預約；常寂光寺則受季節景色與天候影響。'),
-      stop('15:00–16:30', '渡月橋・桂川', '午後陽光灑在桂川上很漂亮，可安排咖啡與散步。', '步行', '戶外全天；咖啡店各自營業', '這一段可以依體力縮短，讓回程留出緩衝。'),
-      stop('16:30–17:15', '和服森林 → 返回市區', 'Excel 寫嵐電；若想節省轉乘，推薦 JR 嵯峨嵐山 → 京都。', '推薦：JR；替代：嵐電', '依當日班次', '嵐電只到四條大宮，並非直達京都站；走累時 JR 會比較直接。')
+      stop('08:45–09:30', '報到／等車', '預留報到、驗票與候車時間；若已訂票，依票面班次搭乘。', '步行', '依小火車班次', '官方時刻表目前列 Torokko 龜岡 09:30 首班，仍需以 2026/11/27 票面與公告為準。', 'https://www.sagano-kanko.co.jp/en/train-info/'),
+      stop('09:30–09:53', '嵯峨野觀光小火車', '搭乘 Torokko 龜岡至 Torokko 嵐山，欣賞保津峽沿線景色。', '嵯峨野觀光小火車', '2026/11/27 班次以官方時刻表與票面為準', '目前公開時刻表列 09:30 自 Torokko 龜岡出發，約 09:53 抵達 Torokko 嵐山。', 'https://www.sagano-kanko.co.jp/en/train-info/'),
+      stop('10:00–10:45', '嵐山竹林・野宮神社', '從竹林小徑開始，早上的人潮較少；留意黑色鳥居。', '步行', '竹林為戶外道路；野宮神社授與所時間依現場公告', '預留約 45 分鐘散步；竹林沒有門票或固定開放時段。'),
+      stop('10:45–12:15', '天龍寺', '由北門入寺，欣賞曹源池庭園，從正門出到商店街。', '步行', '庭園 08:30–17:00（最後入場16:50）；諸堂時段另計', '預留約 1.5 小時參觀庭園與主要堂舍；若要進入諸堂，先確認當日開放範圍。', 'https://www.tenryuji.com/en/visit/'),
+      stop('12:15–13:45', '嵐山大街午餐', '鯛匠 HANANA 或湯豆腐套餐，熱門店家建議提早排隊。', '步行', '餐廳各自營業；午餐尖峰可能候位', '保留 90 分鐘彈性；若 HANANA 候位過久，改吃湯豆腐或沿途小吃。'),
+      stop('13:45–15:15', '常寂光寺／祐齋亭', '二選一：常寂光寺賞秋景，或預約祐齋亭欣賞窗景。', '步行', '常寂光寺 09:00–17:00（最後入場16:30）；祐齋亭 11/27 10:00–17:30（最後入場17:00）', '祐齋亭需事先預約；常寂光寺開放時間與紅葉狀況依當日公告。'),
+      stop('15:15–16:00', '渡月橋・桂川', '午後沿桂川散步、看渡月橋，預留時間前往溫泉。', '步行', '戶外街區無固定開放時間；咖啡店各自營業', '依體力調整停留時間，之後步行前往風風之湯。'),
+      stop('16:00–16:15', '和服森林 → 風風之湯', '和服森林位於嵐電嵐山站旁，步行前往溫泉。', '步行', '依步行速度約 10–15 分鐘', '風風之湯靠近阪急嵐山站，從嵐電嵐山站步行約 10 分鐘。'),
+      stop('16:15–18:15', '嵐山溫泉 風風之湯', '安排日歸泡湯，替嵐山一日遊收尾。', '步行', '每日 12:00–22:00（最終受付21:30；休館日另行公告）', '建議預留約 2 小時；毛巾租借、入館規定與臨時休館請出發前查看官方資訊。', 'https://dormy-hotels.com/spa/fufu/access.php'),
+      stop('18:15–19:15', '風風之湯 → 京都住宿', '泡湯後搭阪急電車返回京都，再步行或轉乘至住宿。', '阪急電車＋步行', '依當日班次', '從阪急嵐山站搭車，依住宿位置在桂站轉乘或接續市區交通。')
     ]
   },
   {
@@ -113,8 +115,8 @@ const days = [
       stop('07:30–10:00', '京都 → 天橋立站', '搭特急列車前往天橋立，建議預約指定席。', 'JR 特急 Hashidate', '依 2026 年 11 月 28 日時刻表；車票／周遊券依資格使用', '關西廣域周遊券是否適用、座位是否能預約，請在購票前確認官方規則。'),
       stop('10:00–10:15', '天橋立站 → View Land', 'View Land 位於車站一側，步行前往比先搭船更順。', '步行', '戶外道路全天；展望台依營業時間', '先去 View Land 可以先完成離車站最近的展望台，再前往另一側。'),
       stop('10:15–11:15', '天橋立 View Land', '搭單人吊椅／纜車登上展望台，俯瞰天橋立沙洲。', '步行＋纜車／吊椅', '常態參考：09:00–17:00；最後搭乘時間依官方公告', '風雨或強風可能影響吊椅運行；若停駛，改搭纜車或調整順序。', 'https://www.viewland.jp/'),
-      stop('11:15–12:00', '天橋立碼頭 → 一之宮碼頭', '不要徒步穿越整條沙洲；推薦搭觀光船前往傘松公園一側。', '天橋立觀光船', '依觀光船班次；天候與季節可能調整', '請把等船時間、步行到碼頭時間一併計入；若船班不合，可查巴士替代。', 'https://www.amano-hashidate.com/'),
-      stop('12:00–13:15', '傘松公園', '搭纜車／吊椅登上展望台，完成第二個視角。', '纜車／吊椅', '常態參考：09:00–17:00；最後搭乘時間依官方公告', '傘松公園的股覗き視角與 View Land 不同；兩個展望台都去時，這裡不要停留過久。', 'https://www.amano-hashidate.com/'),
+      stop('11:15–12:00', '天橋立碼頭 → 一之宮碼頭', '不要徒步穿越整條沙洲；推薦搭觀光船前往傘松公園一側。', '天橋立觀光船', '依觀光船班次；天候與季節可能調整', '請把等船時間、步行到碼頭時間一併計入；若船班不合，可查巴士替代。', 'https://www.amanohashidate.jp/lang/en/spots/sightseeing-boat/'),
+      stop('12:00–13:15', '傘松公園', '搭纜車／吊椅登上展望台，完成第二個視角。', '纜車／吊椅', '常態參考：09:00–17:00；最後搭乘時間依官方公告', '傘松公園的股覗き視角與 View Land 不同；兩個展望台都去時，這裡不要停留過久。', 'https://www.tankai.jp/en/observatory/amanohashidate-kasamatsu-park/'),
       stop('13:15–14:00', '一之宮周邊午餐', '可在傘松公園附近簡單用餐，或依船班回到天橋立站一側再吃。', '步行', '餐廳各自營業；北側店家選擇較少', '若回程特急時間緊，建議把午餐控制在 45 分鐘內。'),
       stop('14:00–15:30', '觀光船返回・天橋立散策', '搭船返回後，可走智恩寺與沙洲入口附近，不建議再徒步完整穿越沙洲。', '觀光船＋步行', '戶外景點全天；船班依公告', '保留回車站、買伴手禮與臨時延誤的緩衝。'),
       stop('15:30–16:30', '天橋立站集合／回程準備', '建議 16:00 前回到車站，不要把最後一班接駁船當成唯一方案。', '步行', '車站依列車班次開放', '這是整天最重要的緩衝時段。'),
@@ -124,7 +126,7 @@ const days = [
   {
     number: '06', date: '11/29', city: 'OSAKA', title: '心齋橋、道頓堀吃逛買',
     route: '京都 → 新世界寄行李 → 心齋橋 → 道頓堀',
-    intro: '從百貨、動漫與銀飾開始，沿著橘街一路走到道頓堀。京都退房到大阪寄放行李的時間已提前，避免壓縮下午行程。',
+    intro: '京都退房後先到大阪寄放行李；下午保留入住與休息緩衝，再前往心齋橋與道頓堀。',
     map: 'https://www.google.com/maps/dir/?api=1&origin=心齋橋PARCO&destination=戎橋&travelmode=walking',
     restaurants: [
       restaurant('蟹道樂', 'Excel 推薦；需要訂位，請確認分店與用餐時間。', '蟹道樂 道頓堀本店'),
@@ -132,12 +134,14 @@ const days = [
       restaurant('HARBS／PABLO／甲賀流章魚燒', '下午茶備選，可依當天排隊狀況選擇。', '心齋橋 HARBS')
     ],
     stops: [
-      stop('08:30–09:30', '京都 → 大阪住宿寄行李', 'Excel 原本 09:30 出發太緊；網站採提前出發版本。', 'JR → 新今宮；再步行至住宿', '依當日 JR 班次', '先到 CHECK inn 大阪新世界寄放行李，再開始心齋橋行程。'),
-      stop('10:00–11:30', '心齋橋 PARCO', '從新今宮／動物園前搭御堂筋線到心齋橋。', '大阪 Metro 御堂筋線', '商場常態參考：10:00–20:00；店舖各自不同', 'Excel 提到 PARCO B2 與心齋橋站 4-B 出口相連，適合當作逛街起點。', 'https://shinsaibashi.parco.jp/'),
-      stop('11:30–13:00', '美國村', '逛街、拍照，接著步行往橘街。', '步行', '街區戶外全天；店家各自營業', '適合把想買的店先記在地圖上，避免逛街時來回折返。'),
-      stop('13:00–15:30', '橘街・堀江・心齋橋商店街', '安排午餐、銀飾與選物店。', '步行', '店家各自營業', '保留下午茶彈性，不需要把每一家店都排成固定時間。'),
-      stop('17:30–19:00', '道頓堀・戎橋', '欣賞固力果跑跑人招牌與河岸霓虹。', '步行', '戶外街區全天；各店家不同', '熱門餐廳建議先訂位，晚餐不要只依賴現場候位。'),
-      stop('19:30–20:00', 'Wonder Cruise（Optional）', 'Excel 建議約 19:30 看夜景；要先確認船班與訂位。', '道頓堀水上觀光船', '常態參考：夜間約 17:00–21:30；依官方班次', '若搭船，晚餐建議排在 20:00 後。')
+      stop('08:30–10:30', '京都 → 大阪住宿寄行李', '京都退房後前往大阪，預留車程、轉乘、步行與寄放行李時間。', 'JR → 新今宮；再步行至住宿', '依當日 JR 班次', '若 Day 5 跟團回程較晚，前一晚先整理行李；抵達後先寄放行李，不必急著趕百貨開門。'),
+      stop('10:30–11:00', '住宿／新今宮 → 心齋橋', '寄放行李後搭大阪 Metro 御堂筋線前往心齋橋。', '大阪 Metro 御堂筋線', '依當日班次', '多留半小時給寄行李與轉乘，抵達後再開始逛街。'),
+      stop('11:00–12:30', '心齋橋 PARCO', '從百貨與動漫商店開始逛街。', '步行', '商場常態參考：10:00–20:00；店舖各自不同', 'Excel 提到 PARCO B2 與心齋橋站 4-B 出口相連；可依抵達狀況調整。', 'https://shinsaibashi.parco.jp/'),
+      stop('12:30–13:30', '美國村', '逛街、拍照，再步行前往橘街。', '步行', '街區戶外全天；店家各自營業', '依興趣彈性縮短；午餐安排在後續堀江／心齋橋時段。'),
+      stop('13:30–16:00', '橘街・堀江・心齋橋商店街', '安排午餐、銀飾與選物店。', '步行', '店家各自營業', '保留 2.5 小時彈性，不需要把每一家店都排成固定時間。'),
+      stop('16:00–17:00', '飯店 Check-in／休息緩衝', '回 CHECK inn 大阪新世界辦理入住、放行李與休息，再出發前往道頓堀。', '大阪 Metro／步行', '依住宿入住規定', '若不需要休息，可把這段當作延長逛街或咖啡時間。'),
+      stop('17:00–19:00', '道頓堀・戎橋', '散步、看固力果招牌並安排晚餐。', '步行', '戶外街區全天；各店家不同', '熱門餐廳建議預約；若要搭 19:30 遊船，晚餐改排 20:00 後。'),
+      stop('19:30–20:00', 'Wonder Cruise（Optional）', '可選擇搭船看道頓堀夜景；先確認當日班次與訂位。', '道頓堀水上觀光船', '依官方當日班次', '搭船與晚餐擇序安排：搭船後再用晚餐，避免和餐廳訂位時間衝突。')
     ]
   },
   {
@@ -156,7 +160,8 @@ const days = [
     },
     stops: [
       stop('06:30–07:10', '新今宮 → Universal City', '在西九條站轉 JR 夢咲線，抵達 Universal City 後步行前往園區。', 'JR 大阪環狀線／夢咲線', '依當日班次；Day 7 園區 09:00 開園', '交通方向正確；抵達後依現場動線前往園區入口。'),
-      stop('09:00–20:30', '超級瑪利歐世界', '入園後先確認區域入場與整理券，再安排熱門設施。', '步行', 'Day 7（11/30）官方營運時間：09:00–20:30', '當日實際入場與區域入場規則，請以官方公告為準。', 'https://www.usj.co.jp/web/en/us'),
+      stop('09:00–20:30', 'USJ', 'Day 7 園區開園至閉園時間，入園後依設施與區域整理券安排動線。', '園區營業時間', '官方公告：09:00–20:30', '實際營業時間可能調整，出發前請再核對官方日曆。', 'https://www.usj.co.jp/web/ja/jp/park-guide/schedule/park-hour'),
+      stop('白天', '超級瑪利歐世界', '入園後先確認區域入場整理券，再依票面時段入場。', '園內步行', '依當日區域入場與設施營運安排', '區域入場規則與可入場時段以官方 App／票券為準。', 'https://www.usj.co.jp/web/zh/tw/'),
       stop('白天', '庫巴・咚奇剛・哈利波特', '依 App 等待時間調整：庫巴挑戰書、咚奇剛瘋狂礦車、禁忌之旅。', '園內步行', '依 USJ 當日運營時間', '熱門設施與期間限定活動會依當日營運狀況調整。', 'https://www.usj.co.jp/web/en/us'),
       stop('下午', '小小兵・Hollywood 區', '小小兵瘋狂乘車遊，以及當期活動（例如芙莉蓮）依公告為準。', '園內步行', '依當期活動公告', '設施與期間限定活動可能因日期調整，出發前查看官方 App。', 'https://www.usj.co.jp/web/en/us'),
       stop('20:30–21:30', 'USJ → 飯店', '離園後搭 JR 返回新今宮，晚餐可安排在新世界。', 'JR 夢咲線／大阪環狀線', '依末班車與園區散場人潮', '不要壓最後一班車，離園後先確認轉乘方向。')
@@ -169,14 +174,15 @@ const days = [
     map: 'https://www.google.com/maps/dir/?api=1&origin=大阪城天守閣&destination=スパワールド&travelmode=transit',
     restaurants: [restaurant('新世界串炸', '通天閣周邊可作遲來的午餐；尖峰以外較容易入座。', '新世界 串炸')],
     stops: [
-      stop('08:30–09:00', '飯店 → 大阪城', '從新今宮搭 JR 大阪環狀線到森之宮，通常比多次轉乘更直觀。', '推薦：JR 大阪環狀線；替代：大阪 Metro', '依當日班次', '大阪城公園範圍很大，從車站到天守閣仍要步行約 15 分鐘以上。'),
-      stop('09:00–10:30', '大阪城天守閣', '參觀天守閣，預留入館與排隊時間。', '步行', '常態參考：09:00–17:00；最後入館約 16:30', '天守閣與大阪城公園是不同範圍，請不要只用天守閣的時間估算整段行程。', 'https://www.osakacastle.net/'),
-      stop('10:30–11:30', '大阪城御座船', '實際乘船時間與售票方式依當日公告；建議提前到碼頭確認。', '步行＋御座船', '依當日班次與售票狀況', '御座船可能受天候與滿席影響，請保留大阪城公園內的步行緩衝。'),
-      stop('11:30–12:30', '大阪城公園散步', '從景點返回車站前，將這段作為緩衝。', '步行', '戶外公園依公告開放', '如果前面延誤，這段可縮短，不要犧牲後面的神社與溫泉。'),
-      stop('12:30–13:15', '大阪城 → 難波八阪神社', 'Excel 原估 30 分鐘；加上公園內步行，建議抓 45 分鐘。', '中央線 → 本町轉御堂筋線 → 難波', '依班次與步行時間', '到難波後還需步行約 6–10 分鐘至神社。'),
-      stop('13:15–13:55', '難波八阪神社', '拍攝巨大的獅子頭神殿，停留約 30–40 分鐘。', '步行', '境內戶外可參拜；社務所與授與所依公告', '午後仍可拍照，但請留意 17:00 前後的社務所時間。'),
-      stop('14:00–15:30', '新世界本通・通天閣', '吃遲來的午餐與串炸，再到通天閣周邊散步。', '御堂筋線至動物園前＋步行', '通天閣常態參考：09:00–20:30；最後入場約 20:00', '從難波到動物園前僅數站，但地下街步行出口可能耗時。', 'https://www.tsutenkaku.co.jp/Guide-pdf/mishiran-guide-english.pdf'),
-      stop('15:30–19:30', 'Spa World 溫泉大世界', '把溫泉排在最後，泡湯、休息與補眠。', '步行', '設施長時間營業；浴場、岩盤浴與入館時間依官方公告', '帶好毛巾、替換衣物與必要用品；入館規定可能變動。', 'https://www.spaworld.co.jp/english/'),
+      stop('08:15–09:00', '飯店 → 大阪城', '從新今宮搭 JR 大阪環狀線到森之宮，預留出站後步行時間。', '推薦：JR 大阪環狀線；替代：大阪 Metro／計程車', '依當日班次', '多留 15 分鐘交通緩衝；從車站到天守閣仍需步行約 15 分鐘。'),
+      stop('09:00–10:30', '大阪城天守閣', '參觀天守閣，預留入館與排隊時間。', '步行', '每日 09:00–18:00（最終入館17:30）', '天守閣與大阪城公園是不同範圍；公園步行至天守閣也需預留時間。', 'https://www.osakacastle.net/?lang=en'),
+      stop('10:30–11:30', '大阪城御座船', '搭船繞行大阪城內護城河，預留購票與候船時間。', '步行＋御座船', '每日約 10:00–16:30；約 10–15 分鐘一班，航程約 20 分鐘', '船班可能受天候、滿席影響而調整或停航，當日先至極樂橋售票處確認。', 'https://osaka-info.jp/en/spot/golden-wasen-osaka-castle-gozabune/'),
+      stop('11:30–12:15', '大阪城公園散步', '搭船後在公園散步，並作為前往難波的緩衝。', '步行', '戶外公園依公告開放', '如前面排隊延誤可縮短，留足出園與轉乘時間。'),
+      stop('12:15–13:00', '大阪城 → 難波八阪神社', '由森之宮搭中央線至本町，再轉御堂筋線至難波。', '大阪 Metro＋步行', '依班次與步行時間', '預留約 45 分鐘，包含從公園走回車站及抵達難波後步行至神社。'),
+      stop('13:00–13:40', '難波八阪神社', '拍攝巨大的獅子頭神殿，停留約 30–40 分鐘。', '步行', '境內 06:00–17:00；社務所 09:00–16:50', '目前安排在境內開放時間內；若要參拜社務所，需留意 16:50 前受理。', 'https://osaka-info.jp/en/spot/nanbayasakijinja/'),
+      stop('13:40–14:10', '難波八阪神社 → 新世界', '步行至難波站後搭御堂筋線到動物園前，再走到新世界。', '步行＋大阪 Metro', '依當日班次與步行時間', '多留 20–30 分鐘轉乘與出站步行緩衝。'),
+      stop('14:10–16:00', '新世界本通・通天閣', '安排遲來的午餐與串炸，再到通天閣周邊散步。', '步行', '一般展望台 09:00–21:45（最終入場21:15）', '預留約 1 小時 50 分鐘；若午餐或排隊延誤，可縮短街區散步。', 'https://www.tsutenkaku.co.jp/annai/'),
+      stop('16:00–19:30', 'Spa World 溫泉大世界', '把溫泉排在最後，泡湯、休息與補眠。', '步行', '浴場每日 10:00–翌日08:45；其他設施時段不同', '保留 3.5 小時泡湯休息；帶好毛巾與替換衣物，並確認各設施營業時間。', 'https://www.spaworld.co.jp/english/info/eigyo/'),
       stop('19:30 之後', '新世界／難波晚餐', '泡完湯後可留在新世界，或搭御堂筋線回難波。', '步行／御堂筋線', '餐廳各自營業', '以住宿附近用餐為優先，避免泡湯後再長距離移動。')
     ]
   },
@@ -201,22 +207,16 @@ const days = [
     intro: '11:30 是飛往台灣的國際航班，最後一天提前出發，將報到、安檢與機場購物都留在上午完成。',
     map: mapFor('關西國際機場'),
     stops: [
-      stop('06:30–07:00', '整理行李・Check-out', '前一晚完成大部分打包，早上確認護照、票券、充電設備與退稅商品。', '步行', '住宿依櫃檯規定', '先向住宿確認最早退房與行李寄放規則。'),
-      stop('07:00–07:20', '飯店 → 新今宮站', '住宿位在新世界附近，步行前往南海新今宮站。', '步行', '車站依首班車時間', '行李多時可直接搭短程計程車，避免在街區拖行李。'),
-      stop('約 07:20–08:20', '新今宮 → 關西機場', '國際航班推薦預留約 3 小時抵達機場。', '南海 Rapi:t／Airport Express', '依當日班次；Rapi:t 需確認特急券與座位', 'Rapi:t 較舒適；Airport Express 較省錢。若為第二航廈，還要加上航廈接駁時間。'),
-      stop('08:20–10:00', '報到、安檢與機場購物', '先完成報到與行李托運，再安排免稅店與最後採買。', '機場內步行', '航廈與店家時間依 KIX／航空公司公告', '不要把 11:00 才到機場當成計畫；11:30 是國際航班。'),
+      stop('06:00–06:40', '整理行李・Check-out', '前一晚完成大部分打包，早上確認護照、票券、充電設備與退稅商品。', '步行', '住宿依櫃檯規定', '先向住宿確認最早退房與退房流程。'),
+      stop('06:40–07:00', '飯店 → 新今宮站', '住宿位在新世界附近，步行前往南海新今宮站。', '步行', '車站依首班車時間', '行李多時可搭短程計程車，保留進站與買票時間。'),
+      stop('約 07:00–08:20', '新今宮 → 關西機場', '搭較早一班南海電車，目標 08:00–08:20 抵達 KIX。', '南海 Rapi:t／Airport Express', '依當日班次；Rapi:t 需確認特急券與座位', 'Rapi:t 較舒適；Airport Express 較省錢。若為第二航廈，預留航廈接駁時間。'),
+      stop('08:20–10:00', '報到、安檢與機場購物', '先完成報到與行李托運，再安排免稅店與最後採買。', '機場內步行', '航廈與店家時間依 KIX／航空公司公告', '國際航班目標至少預留約 3 小時；11:30 起飛，務必確認航空公司櫃檯與登機門時間。'),
       stop('11:30', 'KIX → 台灣', '平安回家。', '國際航班', '依航空公司航班資訊', '出發前再次確認航廈、報到櫃檯與行李規定。')
     ]
   }
 ];
 
 const commonResources = [
-  {
-    name: 'Google Maps',
-    type: '地圖與導航',
-    note: '查路線、附近店家、營業狀態與步行時間。',
-    url: 'https://www.google.com/maps'
-  },
   {
     name: 'Tabelog／食べログ',
     type: '餐廳評價與訂位',
@@ -228,53 +228,107 @@ const commonResources = [
     type: '天氣與警報',
     note: '天橋立、纜車與觀光船出發前的天候確認。',
     url: 'https://www.jma.go.jp/jma/indexe.html'
-  },
-  {
-    name: 'Google 翻譯',
-    type: '旅途中溝通',
-    note: '翻譯菜單、告示與臨時需要說明的內容。',
-    url: 'https://translate.google.com/'
   }
 ];
 
+const transitMaps = {
+  jrWest: {
+    name: 'JR 西日本（關西路線圖）',
+    type: '交通路線圖',
+    note: '京都、大阪、關西機場與關西地區 JR 路線。',
+    url: 'https://www.westjr.co.jp/global/en/timetable/pdf/ubn_en.pdf'
+  },
+  kyoto: {
+    name: '京都市營地下鐵・巴士（路線圖）',
+    type: '交通路線圖',
+    note: '京都市營地下鐵與市區巴士路線。',
+    url: 'https://www2.city.kyoto.lg.jp/kotsu/webguide/en/comm/routemap.html'
+  },
+  osakaMetro: {
+    name: '大阪 Metro（路線圖）',
+    type: '交通路線圖',
+    note: '大阪 Metro 中文互動路線圖與下載地圖。',
+    url: 'https://subway.osakametro.co.jp/cn/guide/routemap.php'
+  },
+  keihan: {
+    name: '京阪電車（路線圖）',
+    type: '交通路線圖',
+    note: '京都與大阪之間的京阪電車路線。',
+    url: 'https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf'
+  },
+  nankai: {
+    name: '南海電鐵（路線圖）',
+    type: '交通路線圖',
+    note: '大阪市區、新今宮與關西機場方向路線。',
+    url: 'https://www.nankai.co.jp/en_railway/traffic/railmap.html'
+  },
+  randen: {
+    name: '嵐電（路線圖）',
+    type: '交通路線圖',
+    note: '嵐山與京都市區的路面電車路線。',
+    url: 'https://www.keifuku.co.jp/cms/keifuku_map/'
+  }
+};
+
 const dailyResources = [
   [
+    transitMaps.jrWest,
     { name: 'JR 西日本', type: '交通官方', note: '確認 HARUKA 與京都方向的班次。', url: 'https://www.westjr.co.jp/global/tc/' },
     { name: 'KIX 關西機場', type: '機場官方', note: '確認航廈、航班與機場交通。', url: 'https://www.kansai-airport.or.jp/tw/' }
   ],
   [
+    transitMaps.kyoto,
     { name: '清水寺官方', type: '景點官方', note: '確認開放時間與特別拝觀。', url: 'https://www.kiyomizudera.or.jp/en/' },
     { name: '京都觀光官方', type: '城市資訊', note: '查京都景點與旅途中公告。', url: 'https://ja.kyoto.travel/' }
   ],
   [
+    transitMaps.jrWest,
+    transitMaps.keihan,
+    transitMaps.kyoto,
     { name: '二條城官方', type: '景點官方', note: '確認開城時間、休城日與入場資訊。', url: 'https://nijo-jocastle.city.kyoto.lg.jp/?lang=en' },
-    { name: '金閣寺官方', type: '景點官方', note: '確認參拜時間與入場資訊。', url: 'https://www.shokoku-ji.jp/kinkakuji/' }
+    { name: '金閣寺官方', type: '景點官方', note: '確認參拜時間與入場資訊。', url: 'https://www.shokoku-ji.jp/kinkakuji/' },
+    { name: '北野天滿宮（紅葉苑）', type: '季節活動', note: '確認 2026 紅葉苑夜間開放與最後入場時間。', url: 'https://kitanotenmangu.or.jp/access/' }
   ],
   [
-    { name: '嵯峨野觀光鐵道', type: '交通官方', note: '確認小火車班次、票券與休業日。', url: 'https://www.sagano-kanko.co.jp/en/' },
-    { name: '天龍寺官方', type: '景點官方', note: '確認庭園與諸堂的開放時間。', url: 'https://www.tenryuji.com/en/' }
+    transitMaps.jrWest,
+    transitMaps.kyoto,
+    transitMaps.randen,
+    { name: '嵯峨野觀光鐵道（時刻表）', type: '交通官方', note: '確認各站時刻、營運日與票務。', url: 'https://www.sagano-kanko.co.jp/en/train-info/' },
+    { name: '天龍寺官方', type: '景點官方', note: '確認庭園與諸堂的開放時間。', url: 'https://www.tenryuji.com/en/visit/' },
+    { name: '風風之湯（營業時間與交通）', type: '日歸溫泉', note: '確認營業時間、交通與入館規定。', url: 'https://dormy-hotels.com/spa/fufu/access.php' }
   ],
   [
+    transitMaps.jrWest,
+    transitMaps.kyoto,
     { name: 'JR 西日本', type: '交通官方', note: '確認天橋立特急與指定席。', url: 'https://www.westjr.co.jp/global/tc/' },
     { name: 'View Land', type: '景點官方', note: '確認纜車、吊椅與展望台運行狀態。', url: 'https://www.viewland.jp/' },
-    { name: '天橋立觀光協會', type: '地方資訊', note: '確認觀光船、傘松公園與天候相關資訊。', url: 'https://www.amano-hashidate.com/' }
+    { name: '天橋立觀光協會（觀光船）', type: '地方資訊', note: '確認天橋立至一之宮的觀光船航線與資訊。', url: 'https://www.amanohashidate.jp/lang/en/spots/sightseeing-boat/' },
+    { name: '丹後海陸交通（傘松公園）', type: '交通官方', note: '確認傘松公園纜車、吊椅與營業資訊。', url: 'https://www.tankai.jp/en/observatory/amanohashidate-kasamatsu-park/' }
   ],
   [
+    transitMaps.jrWest,
+    transitMaps.osakaMetro,
     { name: '大阪 Metro', type: '交通官方', note: '確認心齋橋、難波與新世界的轉乘。', url: 'https://subway.osakametro.co.jp/cht/' },
-    { name: '道頓堀觀光協會', type: '地方資訊', note: '查道頓堀周邊觀光與店家資訊。', url: 'https://www.dotonbori.or.jp/' }
+    { name: '大阪觀光局（道頓堀）', type: '地方資訊', note: '查道頓堀區域、店家與交通資訊。', url: 'https://osaka-info.jp/en/spot/dotonbori/' }
   ],
   [
+    transitMaps.jrWest,
     { name: 'USJ 官方網站', type: '園區官方', note: '確認開園時間、設施與期間限定活動。', url: 'https://www.usj.co.jp/web/zh/tw/' }
   ],
   [
-    { name: '大阪城官方', type: '景點官方', note: '確認天守閣、御座船與公園資訊。', url: 'https://www.osakacastle.net/' },
-    { name: 'Spa World', type: '設施官方', note: '確認入館規定、浴場與營業資訊。', url: 'https://www.spaworld.co.jp/english/' }
+    transitMaps.jrWest,
+    transitMaps.osakaMetro,
+    { name: '大阪城天守閣', type: '景點官方', note: '確認開館時間、門票與參觀資訊。', url: 'https://www.osakacastle.net/?lang=en' },
+    { name: '大阪城御座船', type: '交通／觀光', note: '查看乘船方式、班次與天候停航公告。', url: 'https://osaka-info.jp/en/spot/golden-wasen-osaka-castle-gozabune/' },
+    { name: '難波八阪神社', type: '景點資訊', note: '確認境內與社務所參拜資訊。', url: 'https://osaka-info.jp/en/spot/nanbayasakijinja/' },
+    { name: '通天閣', type: '景點官方', note: '確認展望台開放時間與入場資訊。', url: 'https://www.tsutenkaku.co.jp/annai/' },
+    { name: 'Spa World', type: '設施官方', note: '查看浴場及各設施營業時間與入館規定。', url: 'https://www.spaworld.co.jp/english/info/eigyo/' }
   ],
   [
-    { name: '大阪 Metro', type: '交通官方', note: '確認北浜、淀屋橋與天神橋筋的路線。', url: 'https://subway.osakametro.co.jp/cht/' }
+    transitMaps.osakaMetro
   ],
   [
-    { name: '南海電鐵', type: '交通官方', note: '確認新今宮前往 KIX 的班次與特急券。', url: 'https://www.nankai.co.jp/traffic/railmap.html' },
+    transitMaps.nankai,
     { name: 'KIX 關西機場', type: '機場官方', note: '確認航廈、報到與前往第二航廈的接駁。', url: 'https://www.kansai-airport.or.jp/tw/' }
   ]
 ];
@@ -322,11 +376,12 @@ const todayReset = document.querySelector('#today-reset');
 const foodTags = document.querySelector('#food-tags');
 const foodTagForm = document.querySelector('#food-tag-form');
 const tripYear = 2026;
+const FOOD_OPTIONS_VERSION = 2;
 
 let currentSelectedDayIndex = 0;
 let checklist = [];
 let foodTagItems = [];
-let reservations = [];
+let foodOptions = defaultFoodOptions();
 
 function escapeHtml(value = '') {
   return String(value).replace(/[&<>'"]/g, (character) => ({
@@ -334,9 +389,86 @@ function escapeHtml(value = '') {
   }[character]));
 }
 
+function defaultFoodOptions() {
+  return days.flatMap((day, dayIndex) => (day.restaurants || []).map((item, itemIndex) => ({
+    id: `default-${dayIndex}-${itemIndex}`,
+    dayIndex,
+    name: item.name,
+    note: item.note,
+    link: item.map || item.tabelog || item.official || '',
+    reserved: false,
+    reservationTime: ''
+  })));
+}
+
+function foodNameKey(name) {
+  return String(name || '').trim().toLocaleLowerCase();
+}
+
+function cleanReservationNote(note) {
+  return String(note || '')
+    .replace(/(?:^|[·｜]\s*)(?:已訂位|已預約)(?:\s+\d{1,2}:\d{2})?/, '')
+    .replace(/^[·｜\s]+|[·｜\s]+$/g, '')
+    .trim();
+}
+
+function reservationStatusLabel(item) {
+  return item.reserved ? '已訂位' : '備選';
+}
+
+function normalizeFoodOptions(items, preserveReservationStatus = false) {
+  return items.map((item, itemIndex) => {
+    const name = String(item?.name || '').trim();
+    const rawDayIndex = Number(item?.dayIndex);
+    const dayIndex = Number.isInteger(rawDayIndex) && rawDayIndex >= 0 && rawDayIndex < days.length ? rawDayIndex : 0;
+    const note = String(item?.note || '').trim();
+    const reservationUrl = String(item?.reservationUrl || '').trim();
+    const link = String(item?.link || reservationUrl || item?.map || item?.official || item?.tabelog || '').trim();
+
+    return {
+      id: String(item?.id || `food-${dayIndex}-${itemIndex}`),
+      dayIndex,
+      name,
+      note: preserveReservationStatus ? note : cleanReservationNote(note),
+      link,
+      reserved: preserveReservationStatus && Boolean(item?.reserved),
+      reservationTime: preserveReservationStatus ? String(item?.reservationTime || '').trim() : ''
+    };
+  }).filter((item) => item.name);
+}
+
+function addReservationsAsOptions(options, legacyReservations = []) {
+  legacyReservations.forEach((reservation, reservationIndex) => {
+    const name = String(reservation?.name || '').trim();
+    if (!name) return;
+
+    const rawDayIndex = Number(reservation.dayIndex);
+    const dayIndex = Number.isInteger(rawDayIndex) && rawDayIndex >= 0 && rawDayIndex < days.length ? rawDayIndex : 0;
+    const existing = options.find((item) => item.dayIndex === dayIndex && foodNameKey(item.name) === foodNameKey(name));
+
+    if (existing) {
+      existing.link = String(reservation.url || '').trim() || existing.link;
+      return;
+    }
+
+    options.push({
+      id: String(reservation.id || `reservation-option-${dayIndex}-${reservationIndex}`),
+      dayIndex,
+      name,
+      note: '',
+      link: String(reservation.url || '').trim(),
+      reserved: false,
+      reservationTime: ''
+    });
+  });
+
+  return options;
+}
+
 // --- Unified JSONBin.io Cloud Sync Methods ---
 async function loadCloudData() {
   const list = document.querySelector('#check-list');
+  let shouldSaveFoodOptions = false;
   if (list) list.innerHTML = '<li class="empty-checklist">載入雲端資料中...</li>';
   if (foodTags) foodTags.innerHTML = '<p class="empty-food-tags">載入雲端想吃清單中...</p>';
 
@@ -352,17 +484,29 @@ async function loadCloudData() {
 
     checklist = Array.isArray(record.checklist) ? record.checklist : defaultChecklist.map((item) => ({ ...item }));
     foodTagItems = Array.isArray(record.foodTags) ? record.foodTags : [...defaultFoodTags];
-    reservations = Array.isArray(record.reservations) ? record.reservations : [];
+    const preserveReservationStatus = record.foodOptionsVersion === FOOD_OPTIONS_VERSION;
+    if (Array.isArray(record.foodOptions)) {
+      foodOptions = normalizeFoodOptions(record.foodOptions, preserveReservationStatus);
+      shouldSaveFoodOptions = !preserveReservationStatus;
+      if (Array.isArray(record.reservations) && record.reservations.length) {
+        foodOptions = addReservationsAsOptions(foodOptions, record.reservations);
+        shouldSaveFoodOptions = true;
+      }
+    } else {
+      foodOptions = addReservationsAsOptions(defaultFoodOptions(), Array.isArray(record.reservations) ? record.reservations : []);
+      shouldSaveFoodOptions = true;
+    }
   } catch (error) {
     console.error('載入雲端資料失敗，改用預設值', error);
     checklist = defaultChecklist.map((item) => ({ ...item }));
     foodTagItems = [...defaultFoodTags];
-    reservations = [];
+    foodOptions = defaultFoodOptions();
   }
 
   renderChecklist();
   renderFoodTags();
   renderDay(currentSelectedDayIndex);
+  if (shouldSaveFoodOptions) await saveCloudData();
 }
 
 async function saveCloudData() {
@@ -376,7 +520,8 @@ async function saveCloudData() {
       body: JSON.stringify({
         checklist,
         foodTags: foodTagItems,
-        reservations
+        foodOptions,
+        foodOptionsVersion: FOOD_OPTIONS_VERSION
       })
     });
     if (!response.ok) throw new Error('更新雲端資料失敗');
@@ -409,6 +554,12 @@ function renderFoodTags() {
 function dayDateKey(day) {
   const [month, date] = day.date.split('/');
   return `${tripYear}-${month.padStart(2, '0')}-${date.padStart(2, '0')}`;
+}
+
+function dayWeekday(day) {
+  const [month, date] = day.date.split('/').map(Number);
+  const dateAtUtc = new Date(Date.UTC(tripYear, month - 1, date));
+  return `(${['日', '一', '二', '三', '四', '五', '六'][dateAtUtc.getUTCDay()]})`;
 }
 
 function japanTodayKey() {
@@ -464,7 +615,7 @@ function renderToolbox(index) {
     <article class="toolbox-card">
       <span class="card-kicker">ALWAYS USEFUL</span>
       <h3>隨身入口</h3>
-      <p class="toolbox-note">地圖、餐廳、天氣與翻譯等，不依日期都能直接使用。</p>
+      <p class="toolbox-note">餐廳評價與天氣資訊，不依日期都能直接使用。</p>
       <div class="resource-list">
         ${commonResources.map(resourceMarkup).join('')}
       </div>
@@ -506,7 +657,7 @@ function renderTabs(activeIndex = todayIndex) {
   tabs.innerHTML = days.map((day, index) => `
     <button class="day-tab" type="button" role="tab" aria-selected="${index === activeIndex}" aria-controls="day-detail" data-day="${index}">
       <small>DAY ${day.number}</small>
-      <strong>${day.date}</strong>
+      <strong>${day.date} ${dayWeekday(day)}</strong>
     </button>
   `).join('');
 
@@ -525,14 +676,14 @@ function renderDay(index) {
   renderTodayDashboard(index);
   renderToolbox(index);
 
-  const dayReservations = reservations.filter((res) => res.dayIndex === index);
+  const dayFoodOptions = foodOptions.filter((item) => item.dayIndex === index);
 
   detail.innerHTML = `
     <div class="day-summary">
       <p class="eyebrow">DAY ${day.number} · ${day.city}</p>
       <h3>${day.title}</h3>
       <p>${day.intro}</p>
-      <p class="date">${day.date} / 2026</p>
+      <p class="date">${day.date} / ${tripYear} ${dayWeekday(day)}</p>
       <span class="route-pill">${day.route}</span>
       ${day.guide ? `
         <div class="day-guide">
@@ -563,52 +714,47 @@ function renderDay(index) {
         `).join('')}
       </ol>
       <div class="restaurant-box">
-        <div class="restaurant-box-heading"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
-        ${day.restaurants && day.restaurants.length ? `
-          <p class="restaurant-intro">已整理的候選優先放在前面；以下連結可分別查看地圖、Tabelog 與官方資訊。</p>
-          <div class="restaurant-list">
-            ${day.restaurants.map((item) => `
-              <article class="restaurant-item">
-                <strong>${escapeHtml(item.name)}</strong>
-                <span>${escapeHtml(item.note)}</span>
-                <div class="restaurant-actions">
-                  <a href="${item.map}" target="_blank" rel="noreferrer">Google Maps ↗</a>
-                  <a href="${item.tabelog}" target="_blank" rel="noreferrer">Tabelog ↗</a>
-                  ${item.official ? `<a href="${item.official}" target="_blank" rel="noreferrer">官方網站 ↗</a>` : ''}
-                </div>
-              </article>
-            `).join('')}
-          </div>
-        ` : '<p class="restaurant-intro">今天尚未整理固定候選，可以先從附近搜尋開始。</p>'}
-
-        <!-- 已訂位區塊 -->
-        <div class="restaurant-box-heading" style="margin-top: 24px;">
-          <span class="card-kicker">RESERVED</span>
-          <h4>已訂位</h4>
+        <div class="restaurant-box-heading food-section-heading">
+          <div class="food-section-title"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
+          <button id="show-food-form" class="food-add-trigger" type="button" aria-label="新增餐廳" title="新增餐廳" aria-expanded="false" aria-controls="food-option-form">＋</button>
         </div>
-        <div id="reservation-list" class="restaurant-list" style="margin-top: 10px;">
-          ${dayReservations.length ? dayReservations.map((res) => `
-            <article class="restaurant-item">
-              <strong>${escapeHtml(res.time)} · ${escapeHtml(res.name)}</strong>
-              <div class="restaurant-actions">
-                ${res.url ? `<a href="${escapeHtml(res.url)}" target="_blank" rel="noreferrer">開啟訂位連結 ↗</a>` : ''}
-                <button type="button" class="delete-check" data-delete-res="${res.id}" style="color:var(--red); font-size:11px; cursor:pointer; border:0; background:none;">刪除</button>
+        <form id="food-option-form" class="checklist-form food-option-form" style="margin-top: 0;" hidden>
+          <input id="food-name" type="text" placeholder="餐廳名稱" required />
+          <textarea id="food-note" rows="2" placeholder="備註"></textarea>
+          <input id="food-link" type="url" placeholder="連結（選填）" />
+          <div class="food-option-form-actions">
+            <button class="button button-primary button-small" type="submit">新增</button>
+            <button class="button button-quiet button-small" type="button" id="cancel-food-form">取消</button>
+          </div>
+        </form>
+        <div class="restaurant-list food-option-list">
+          ${dayFoodOptions.length ? dayFoodOptions.map((item) => `
+            <article class="restaurant-item food-option-item">
+              <div class="food-item-heading">
+                <strong>${escapeHtml(item.name)}</strong>
+                <button type="button" class="food-reservation-status ${item.reserved ? 'is-reserved' : 'is-option'}" data-toggle-reservation="${escapeHtml(item.id)}" aria-pressed="${Boolean(item.reserved)}">${reservationStatusLabel(item)}</button>
+              </div>
+              <div class="food-note-display">
+                <span class="food-note-text">${item.note ? escapeHtml(item.note) : '<span class="food-note-empty">尚未新增備註</span>'}</span>
+              </div>
+              <form class="food-note-editor" data-food-id="${escapeHtml(item.id)}" hidden>
+                <textarea rows="2" aria-label="編輯 ${escapeHtml(item.name)} 的備註">${escapeHtml(item.note)}</textarea>
+                <div class="food-note-editor-actions">
+                  <button class="button button-primary button-small" type="submit">儲存</button>
+                  <button class="button button-quiet button-small" type="button" data-cancel-note>取消</button>
+                </div>
+              </form>
+              <div class="food-item-footer">
+                ${item.link ? `<a href="${escapeHtml(item.link)}" target="_blank" rel="noreferrer">開啟連結 ↗</a>` : ''}
+                <button type="button" class="delete-check" data-delete-food="${escapeHtml(item.id)}" aria-label="刪除 ${escapeHtml(item.name)}">刪除</button>
               </div>
             </article>
-          `).join('') : '<p class="restaurant-intro">今天尚無已訂位餐廳。</p>'}
+          `).join('') : '<p class="restaurant-intro">今天還沒有餐廳，可以新增一間。</p>'}
         </div>
-        <form id="reservation-form" class="checklist-form" style="margin-top: 12px; flex-wrap: wrap;">
-          <input id="res-time" type="text" placeholder="時間（例：19:00）" style="flex: 1 1 100px;" required />
-          <input id="res-name" type="text" placeholder="餐廳名稱" style="flex: 2 1 150px;" required />
-          <input id="res-url" type="url" placeholder="連結（選填）" style="flex: 2 1 150px;" />
-          <button class="button button-primary button-small" type="submit">＋ 新增訂位</button>
-        </form>
-
         <div class="restaurant-discovery" style="margin-top: 20px;">
           <div><strong>附近探索</strong><span>依今天的區域查找高評價餐廳，營業狀態與訂位規則請以店家資訊為準。</span></div>
           <div class="restaurant-discovery-links">
-            <a href="${tabelogFor(foodSearches[index])}" target="_blank" rel="noreferrer">Tabelog 附近搜尋 ↗</a>
-            <a href="${mapFor(foodSearches[index])}" target="_blank" rel="noreferrer">Google Maps 附近搜尋 ↗</a>
+            <a href="${mapFor(foodSearches[index])}" target="_blank" rel="noreferrer">附近餐廳搜尋 ↗</a>
           </div>
         </div>
       </div>
@@ -619,31 +765,91 @@ function renderDay(index) {
     button.addEventListener('click', () => openModal(Number(button.dataset.day), Number(button.dataset.stop)));
   });
 
-  const resForm = detail.querySelector('#reservation-form');
-  if (resForm) {
-    resForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const time = detail.querySelector('#res-time').value.trim();
-      const name = detail.querySelector('#res-name').value.trim();
-      const url = detail.querySelector('#res-url').value.trim();
-      if (!time || !name) return;
+  const showFoodForm = detail.querySelector('#show-food-form');
+  const foodForm = detail.querySelector('#food-option-form');
+  showFoodForm.addEventListener('click', () => {
+    showFoodForm.hidden = true;
+    showFoodForm.setAttribute('aria-expanded', 'true');
+    foodForm.hidden = false;
+    foodForm.querySelector('#food-name').focus();
+  });
+  detail.querySelector('#cancel-food-form').addEventListener('click', () => {
+    foodForm.reset();
+    foodForm.hidden = true;
+    showFoodForm.hidden = false;
+    showFoodForm.setAttribute('aria-expanded', 'false');
+  });
 
-      reservations.push({
-        id: `res-${Date.now()}`,
+  foodForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const name = detail.querySelector('#food-name').value.trim();
+    const note = detail.querySelector('#food-note').value.trim();
+    const link = detail.querySelector('#food-link').value.trim();
+    if (!name) return;
+
+    const existing = foodOptions.find((item) => item.dayIndex === index && foodNameKey(item.name) === foodNameKey(name));
+    if (existing) {
+      existing.note = note || existing.note;
+      existing.link = link || existing.link;
+    } else {
+      foodOptions.push({
+        id: `food-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
         dayIndex: index,
-        time,
         name,
-        url
+        note,
+        link,
+        reserved: false,
+        reservationTime: ''
       });
+    }
+
+    renderDay(index);
+    await saveCloudData();
+  });
+
+  detail.querySelectorAll('.food-note-display').forEach((noteDisplay) => {
+    noteDisplay.addEventListener('dblclick', () => {
+      const card = noteDisplay.closest('.food-option-item');
+      const editor = card.querySelector('.food-note-editor');
+      noteDisplay.hidden = true;
+      editor.hidden = false;
+      editor.querySelector('textarea').focus();
+    });
+  });
+
+  detail.querySelectorAll('.food-note-editor').forEach((editor) => {
+    editor.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const item = foodOptions.find((option) => option.id === editor.dataset.foodId);
+      if (!item) return;
+      item.note = editor.querySelector('textarea').value.trim();
       renderDay(index);
       await saveCloudData();
     });
-  }
+  });
 
-  detail.querySelectorAll('[data-delete-res]').forEach((button) => {
+  detail.querySelectorAll('[data-cancel-note]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const card = button.closest('.food-option-item');
+      card.querySelector('.food-note-editor').hidden = true;
+      card.querySelector('.food-note-display').hidden = false;
+    });
+  });
+
+  detail.querySelectorAll('[data-toggle-reservation]').forEach((button) => {
     button.addEventListener('click', async () => {
-      const resId = button.dataset.deleteRes;
-      reservations = reservations.filter((r) => r.id !== resId);
+      const item = foodOptions.find((option) => option.id === button.dataset.toggleReservation);
+      if (!item) return;
+      item.reserved = !item.reserved;
+      if (!item.reserved) item.reservationTime = '';
+      renderDay(index);
+      await saveCloudData();
+    });
+  });
+
+  detail.querySelectorAll('[data-delete-food]').forEach((button) => {
+    button.addEventListener('click', async () => {
+      foodOptions = foodOptions.filter((item) => item.id !== button.dataset.deleteFood);
       renderDay(index);
       await saveCloudData();
     });

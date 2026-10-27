@@ -119,31 +119,23 @@
       <article class="day-detail" id="day-detail" aria-live="polite"></article>
     </section>
 
-    <!-- 每日行程下方的共用範本 (供 app.js 渲染使用) -->
+    <!-- 每日行程下方的餐廳範本 -->
     <template id="day-restaurant-template">
       <div class="restaurant-box">
-        <div class="restaurant-box-heading"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
-        <div class="restaurant-candidates-container"></div>
-
-        <!-- 已訂位區塊 -->
-        <div class="restaurant-box-heading" style="margin-top: 24px;">
-          <span class="card-kicker">RESERVED</span>
-          <h4>已訂位</h4>
+        <div class="restaurant-box-heading food-section-heading">
+          <div class="food-section-title"><span class="card-kicker">FOOD / NEARBY</span><h4>今天吃什麼</h4></div>
+          <button id="show-food-form" class="food-add-trigger" type="button" aria-label="新增餐廳" title="新增餐廳" aria-expanded="false" aria-controls="food-option-form">＋</button>
         </div>
-        <div class="reservation-list restaurant-list" style="margin-top: 10px;"></div>
-        
-        <!-- 調整為明確的兩行排版，避免時間欄位被 CSS 擠壓切掉 -->
-        <form id="reservation-form" style="margin-top: 14px; display: flex; flex-direction: column; gap: 10px;">
-          <div style="display: flex; gap: 10px;">
-            <input id="res-time" type="text" placeholder="時間 (例: 19:00)" style="flex: 0 0 110px; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" required />
-            <input id="res-name" type="text" placeholder="餐廳名稱" style="flex: 1 1 auto; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" required />
-          </div>
-          <div style="display: flex; gap: 10px;">
-            <input id="res-url" type="url" placeholder="連結（選填）" style="flex: 1 1 auto; padding: 10px; border: 1px solid var(--line, #ccc); border-radius: 4px; font-size: 14px;" />
-            <button class="button button-primary button-small" type="submit" style="flex: 0 0 110px; white-space: nowrap;">＋ 新增訂位</button>
+        <form id="food-option-form" class="checklist-form food-option-form" style="margin-top: 0;" hidden>
+          <input id="food-name" type="text" placeholder="餐廳名稱" required />
+          <textarea id="food-note" rows="2" placeholder="備註"></textarea>
+          <input id="food-link" type="url" placeholder="連結（選填）" />
+          <div class="food-option-form-actions">
+            <button class="button button-primary button-small" type="submit">新增</button>
+            <button class="button button-quiet button-small" type="button" id="cancel-food-form">取消</button>
           </div>
         </form>
-
+        <div class="restaurant-candidates-container"></div>
         <div class="restaurant-discovery-container" style="margin-top: 20px;"></div>
       </div>
     </template>
